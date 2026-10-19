@@ -1,0 +1,11 @@
+4 colores rojo, azul, verde y negro
+rgb del 1 al 15
+negro del 1 al 14
+negro le gana a rgb
+Retirada: perder
+Figuras (les ganan a los numeros): 
+Pirata le gana a la sirena
+rey de los piratas le gana al pirata
+sirena le gana al rey de los piratas
+si estan los 3 gana sirena
+tigresa deja elejir si se usa como pirata o retirada
