@@ -2,10 +2,10 @@
 rgb del 1 al 15
 negro del 1 al 14
 negro le gana a rgb
-Retirada: perder
+Retirada (5): perder
 Figuras (les ganan a los numeros): 
-Pirata le gana a la sirena
-rey de los piratas le gana al pirata
-sirena le gana al rey de los piratas
+Pirata (6) le gana a la sirena
+rey de los piratas (1) le gana al pirata
+sirena (2) le gana al rey de los piratas
 si estan los 3 gana sirena
-tigresa deja elejir si se usa como pirata o retirada
+tigresa (2) deja elejir si se usa como pirata o retirada
