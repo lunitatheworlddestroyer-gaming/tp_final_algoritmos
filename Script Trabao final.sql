@@ -11,7 +11,7 @@ CREATE TABLE usuarios (
     partidas_perdidos int,
     partidas_jugadas int,
     torneos_ganados int,
-    torneos jugados int
+    torneos_jugados int
 );
 
 -- Tabla cartas
