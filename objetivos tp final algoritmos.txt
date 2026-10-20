@@ -16,3 +16,4 @@ juego de truco (siempre de a un solo jugador)
 
 Se puede indicar a los bots de tu equipo qué hacer y te avisan si tienen algo
 Se puede guardar partidas y continuarlas después (se exportan y se importan)
+Se pueden exportar e importar usuarios
