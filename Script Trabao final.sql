@@ -9,7 +9,9 @@ CREATE TABLE usuarios (
     pass varchar(50),
     partidas_ganadas int,
     partidas_perdidos int,
-    partidas_jugadas int
+    partidas_jugadas int,
+    torneos_ganados int,
+    torneos jugados int
 );
 
 -- Tabla cartas
@@ -17,6 +19,7 @@ CREATE TABLE cartas (
     id int auto_increment primary key,
     nombre varchar(50),
     palo varchar(50),
+    numero int,
     valor int
 );
 
