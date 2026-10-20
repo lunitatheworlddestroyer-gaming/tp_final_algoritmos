@@ -1,0 +1,18 @@
+juego de truco (siempre de a un solo jugador)
+2 modos de juego:
+
+☺ Partida simple:
+☻ con al menos 2 dificultades: fácil y dificil
+☻ opción de hasta 15 y hasta 30 puntos
+☻ 2, 3, 4 o 6 jugadores
+☻ opción con flor o sin flor
+
+☺ Torneo:
+☻ 10 partidas que hay que ganar consecutivamente
+☻ con al menos 3 dificultades: fácil, medio y dificil
+☻ hasta 30 puntos
+☻ 2 o 4 jugadores
+☻ opción con flor o sin flor
+
+Se puede indicar a los bots de tu equipo qué hacer y te avisan si tienen algo
+Se puede guardar partidas y continuarlas después (se exportan y se importan)
