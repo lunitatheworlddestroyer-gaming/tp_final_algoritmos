@@ -2,17 +2,16 @@ tabla usuarios (
     id int auto_increment primary key,
     nombre varchar(50),
     pass varchar(50),
-    partidas_ganadas int,
-    partidas_perdidos int,
-    partidas_jugadas int,
-    torneos_ganados int,
-    torneos_jugados int
+    partidas_ganadas int default 0,
+    partidas_perdidos int default 0,
+    partidas_jugadas int default 0,
+    torneos_ganados int default 0,
+    torneos_jugados int default 0
 )
 
 Tabla cartas (
     id int auto_increment primary key,
-    nombre varchar(50),
-    palo varchar(50),
+   foreign key (palo) references palos(nombre),
     numero int,
     valor int
 )
