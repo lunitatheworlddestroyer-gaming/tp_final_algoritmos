@@ -189,3 +189,4 @@ SELECT
 FROM cartas;
 
 -- =======fin de las vistas=======
+
