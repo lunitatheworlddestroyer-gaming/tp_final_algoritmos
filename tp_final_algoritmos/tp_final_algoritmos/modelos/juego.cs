@@ -6,10 +6,11 @@ using System.Threading.Tasks;
 
 namespace tp_final_algoritmos.modelos
 {
-    public static class juego
+
+    public static class Juego
     {
         //para poner funciones del juego
-        public static int valor_envido(jugador j)
+        public static int valor_envido(Jugador j)
         {
             //hacer
             if (j.mano[0].palo == j.mano[1].palo && j.mano[0].palo == j.mano[2].palo)
