@@ -8,17 +8,21 @@ namespace tp_final_algoritmos.modelos
 {
     public class jugador
     {
-        string nombre;
-        //nombre de usuario, sino "enemigo 1" o "compañero 1", si hay tiempo ponemos nombres reales
-        bool equipo;
-        //true si es nosotros, false si es ellos
-        List<carta> mano;
+        public string nombre;
+        //nombre de usuario, sino "ellos 1" o "nosotros 1", si hay tiempo ponemos nombres reales
+        public List<carta> mano;
         //como mucho 3
-        bool bot;
-        //autoexplicativo
-        int id;
+        public bool equipo;
+        //1 si es nosotros, 0 si es ellos
+        public int id;
         //para guardar quien empieza la siguiente vuelta
-        carta bajar_carta(carta c)
+        public jugador(string n, bool e, int i)
+        {
+            nombre = n;
+            equipo = e;
+            id = i;
+        }
+        public carta bajar_carta(carta c)
         {
             mano.Remove(c);
             return c;

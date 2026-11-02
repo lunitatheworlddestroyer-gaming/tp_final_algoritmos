@@ -8,11 +8,23 @@ namespace tp_final_algoritmos.modelos
 {
     public class partida
     {
-        int cant_jugadores;
-        int nosotros;
-        int ellos;
-        List<jugador> jugadores;
-        List<carta> cartas_jugadas;
-        //cartas en la mesa
+        public int cant_jugadores;
+        public int nosotros;
+        public int ellos;
+        public List<jugador> jugadores;
+        public List<carta> primera;
+        public List<carta> segunda;
+        public List<carta> ultima;
+        //cartas en la mesa, separadas por vuelta
+        bool ganador_primera;
+        bool ganador_segunda;
+        bool ganador_tercera;
+
+        public partida(int c, int n, int e)
+        {
+            cant_jugadores = c;
+            nosotros = n;
+            ellos = e;
+        }
     }
 }

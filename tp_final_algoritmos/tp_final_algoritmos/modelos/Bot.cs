@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace tp_final_algoritmos.modelos
 {
-    public static class ia_bots
+    public class Bot : jugador
     {
-        //para poner la toma de decisiones
+        // para su funcionamiento y toma de desiciones
+        public Bot(bool e, string n, int i) : base(n, e, i){}
     }
 }

@@ -98,8 +98,9 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="modelos\Bot.cs" />
     <Compile Include="modelos\carta.cs" />
-    <Compile Include="modelos\ia_bots.cs" />
+    <Compile Include="modelos\juego.cs" />
     <Compile Include="modelos\jugador.cs" />
     <Compile Include="modelos\partida.cs" />
     <Compile Include="Program.cs" />

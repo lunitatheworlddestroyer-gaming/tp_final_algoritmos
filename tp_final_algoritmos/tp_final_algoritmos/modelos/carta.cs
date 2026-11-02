@@ -8,10 +8,17 @@ namespace tp_final_algoritmos.modelos
 {
     public class carta
     {
-        int numero;
-        int palo;
-        int valor;
-        int id_jugador;
+        public int numero;
+        public int palo;
+        public int valor;
+        public int id_jugador;
         // para guardar quien tiro la carta cuando esten en la mesa
+        public carta(int n, int p, int v, int j)
+        {
+            numero = n;
+            palo = p;
+            valor = v;
+            id_jugador = j;
+        }
     }
 }
