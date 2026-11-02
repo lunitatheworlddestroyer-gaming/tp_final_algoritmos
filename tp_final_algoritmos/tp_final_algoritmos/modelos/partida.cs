@@ -6,13 +6,13 @@ using System.Threading.Tasks;
 
 namespace tp_final_algoritmos.modelos
 {
-    public class partida
+    public class Partida
     {
-        int cant_jugadores;
-        int nosotros;
-        int ellos;
-        List<jugador> jugadores;
-        List<carta> cartas_jugadas;
+        public int cant_jugadores { get; set; }
+        public int nosotros { get; set; }
+        public int ellos { get; set; }
+        public List<Jugador> jugadores { get; set; }
+        public List<Carta> cartas_jugadas { get; set; }
         //cartas en la mesa
     }
 }

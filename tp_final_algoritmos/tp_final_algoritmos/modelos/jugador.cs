@@ -6,19 +6,19 @@ using System.Threading.Tasks;
 
 namespace tp_final_algoritmos.modelos
 {
-    public class jugador
+    public class Jugador
     {
-        string nombre;
+        public string nombre {  get; set; }
         //nombre de usuario, sino "enemigo 1" o "compañero 1", si hay tiempo ponemos nombres reales
-        bool equipo;
+        public bool equipo {  get; set; }
         //true si es nosotros, false si es ellos
-        List<carta> mano;
+        public List<Carta> mano { get; set; }
         //como mucho 3
-        bool bot;
+        public bool es_bot {  get; set; }
         //autoexplicativo
-        int id;
+        public int id { get; set; }
         //para guardar quien empieza la siguiente vuelta
-        carta bajar_carta(carta c)
+        Carta bajar_carta(Carta c)
         {
             mano.Remove(c);
             return c;
