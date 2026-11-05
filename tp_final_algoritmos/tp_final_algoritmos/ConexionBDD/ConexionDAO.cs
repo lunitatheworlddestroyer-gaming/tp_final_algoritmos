@@ -9,7 +9,11 @@ namespace tp_final_algoritmos.ConexionBDD
 {
     public static class ConexionDAO
     {
-        private static string cadena_de_conexion; // agregar los datos de la BDD
+        private static string cadena_de_conexion  =  "server=localhost;" +
+    "port=3306;" +
+    "database=Trabajo_final;" +
+    "uid=root;" +
+    "pwd=admin;";
 
         public static MySqlConnection crear_conexion()
         {

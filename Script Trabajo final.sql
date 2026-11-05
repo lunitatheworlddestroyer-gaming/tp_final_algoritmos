@@ -1,6 +1,6 @@
 create database Trabajo_final;
 use Trabajo_final; 
-
+	set sql_safe_updates = 0;
 
 -- Tabla ususarios
 CREATE TABLE usuarios (
@@ -14,19 +14,21 @@ CREATE TABLE usuarios (
     torneos_jugados int default 0
 );
 
--- Tabla cartas
-CREATE TABLE cartas (
-    id int auto_increment primary key,
-    foreign key (palo) references palos(nombre),
-    numero int,
-    valor int
-);
-
 -- Tabla palos
 CREATE TABLE palos (
     id int auto_increment primary key,
     nombre varchar(50)
 );
+
+-- Tabla cartas
+CREATE TABLE cartas (
+    id int auto_increment primary key,
+    palo int,
+    numero int,
+    valor_truco int,
+    valor_envido int,
+	foreign key (palo) references palos(id)
+) engine=InnoDB;
 
 insert into palos(nombre) values
 ('espada'),
@@ -34,64 +36,68 @@ insert into palos(nombre) values
 ('basto'),
 ('copa');
 
-insert into cartas (palo, numero, valor) values
-('espada', 1, 13),
-('espada', 2, 8),
-('espada', 3, 9),
-('espada', 4, 0),
-('espada', 5, 1),
-('espada', 6, 2),
-('espada', 7, 11),
-('espada', 10, 4),
-('espada', 11, 5),
-('espada', 12, 6),
-('oro', 1, 7),
-('oro', 2, 8),
-('oro', 3, 9),
-('oro', 4, 0),
-('oro', 5, 1),
-('oro', 6, 2),
-('oro', 7, 10),
-('oro', 10, 4),
-('oro', 11, 5),
-('oro', 12, 6),
-('basto', 1, 12),
-('basto', 2, 8),
-('basto', 3, 9),
-('basto', 4, 0),
-('basto', 5, 1),
-('basto', 6, 2),
-('basto', 7, 3),
-('basto', 10, 4),
-('basto', 11, 5),
-('basto', 12, 6),
-('copa', 1, 7),
-('copa', 2, 8),
-('copa', 3, 9),
-('copa', 4, 0),
-('copa', 5, 1),
-('copa', 6, 2),
-('copa', 7, 3),
-('copa', 10, 4),
-('copa', 11, 5),
-('copa', 12, 6);
+insert into cartas (palo, numero, valor_truco, valor_envido) values
+('1', 1, 13, 1),
+('1', 2, 8, 2),
+('1', 3, 9, 3),
+('1', 4, 0, 4),
+('1', 5, 1, 5),
+('1', 6, 2, 6),
+('1', 7, 11, 7),
+('1', 10, 4, 0),
+('1', 11, 5, 0),
+('1', 12, 6, 0),
+('2', 1, 7, 1),
+('2', 2, 8, 2),
+('2', 3, 9, 3),
+('2', 4, 0, 4),
+('2', 5, 1, 5),
+('2', 6, 2, 6),
+('2', 7, 10, 7),
+('2', 10, 4, 0),
+('2', 11, 5, 0),
+('2', 12, 6, 0),
+('3', 1, 12, 1),
+('3', 2, 8, 2),
+('3', 3, 9, 3),
+('3', 4, 0, 4),
+('3', 5, 1, 5),
+('3', 6, 2, 6),
+('3', 7, 3, 7),
+('3', 10, 4, 0),
+('3', 11, 5, 0),
+('3', 12, 6, 0),
+('4', 1, 7, 1),
+('4', 2, 8, 2),
+('4', 3, 9, 3),
+('4', 4, 0, 4),
+('4', 5, 1, 5),
+('4', 6, 2, 6),
+('4', 7, 3, 7),
+('4', 10, 4, 0),
+('4', 11, 5, 0),
+('4', 12, 6, 0);
 
 insert into usuarios (nombre, pass) values
 ('test', '1234')
 
 -- PROCEDIMIENTO ALMACENADO
+
 DELIMITER //
 
 CREATE PROCEDURE repartir_cartas_truco (
     IN p_modo_juego VARCHAR(10) -- Valores esperados: '1v1', '2v2', '3v3'
 )
 BEGIN
+
     DECLARE v_total_jugadores INT;
     DECLARE v_jugador_actual INT DEFAULT 1;
     DECLARE v_ronda_actual INT DEFAULT 1;
     DECLARE v_id_carta INT;
-    DECLARE v_palo VARCHAR(50);
+    DECLARE v_palo int;
     DECLARE v_numero INT;
+    declare v_valor_truco int;
+    declare v_valor_envido int;
     
     -- 1. Determinar la cantidad de jugadores según el modo
     IF p_modo_juego = '1v1' THEN
@@ -105,13 +111,12 @@ BEGIN
     END IF;
 
     -- 2. Crear una tabla temporal para guardar el reparto de esta mano
-    -- (Esta tabla se destruye automáticamente al terminar la ejecución)
     CREATE TEMPORARY TABLE IF NOT EXISTS mano_repartida (
         jugador_id INT,
-        orden_carta INT,
-        carta_id INT,
-        palo VARCHAR(50),
-        numero INT
+        palo int,
+        numero INT, 
+        valor_truco int,
+        valor_envido int
     );
     
     -- Limpiar la tabla temporal por si acaso
@@ -119,7 +124,7 @@ BEGIN
 
     -- 3. Crear una tabla temporal con las cartas disponibles y desordenarlas (RAND)
     CREATE TEMPORARY TABLE cartas_disponibles AS
-    SELECT id, palo, numero FROM cartas; -- Usa tu tabla de cartas
+    SELECT id, palo, numero, valor_truco, valor_envido FROM cartas; -- Usa tu tabla de cartas
 
     -- 4. Bucle para repartir 3 cartas a cada jugador (repartiendo de a 1 carta por ronda)
     WHILE v_ronda_actual <= 3 DO
@@ -128,14 +133,14 @@ BEGIN
         WHILE v_jugador_actual <= v_total_jugadores DO
             
             -- Seleccionar una carta aleatoria de las disponibles
-            SELECT id, palo, numero INTO v_id_carta, v_palo, v_numero
+            SELECT id, palo, numero, valor_truco, valor_envido INTO v_id_carta, v_palo, v_numero, v_valor_truco, v_valor_envido
             FROM cartas_disponibles
             ORDER BY RAND()
             LIMIT 1;
             
             -- Asignarle la carta al jugador actual en la ronda correspondiente
-            INSERT INTO mano_repartida (jugador_id, orden_carta, carta_id, palo, numero)
-            VALUES (v_jugador_actual, v_ronda_actual, v_id_carta, v_palo, v_numero);
+            INSERT INTO mano_repartida (jugador_id, palo, numero, valor_truco, valor_envido)
+            VALUES (v_jugador_actual, v_palo, v_numero, v_valor_truco, v_valor_envido);
             
             -- Eliminar la carta seleccionada para que NUNCA se vuelva a repetir en esta mano
             DELETE FROM cartas_disponibles WHERE id = v_id_carta;
@@ -149,11 +154,10 @@ BEGIN
     END WHILE;
 
     -- 5. Mostrar el resultado final del reparto para que tu aplicación lo lea
-    SELECT * FROM mano_repartida ORDER BY jugador_id, orden_carta;
+    SELECT * FROM mano_repartida ORDER BY jugador_id;
 
     -- 6. Limpieza de tablas temporales
     DROP TEMPORARY TABLE cartas_disponibles;
-    DROP TEMPORARY TABLE mano_repartida;
 
 END //
 
@@ -178,15 +182,7 @@ SELECT
         ELSE 0 
     END AS porcentaje_efectividad
 FROM usuarios;
--- Esta vista organiza las cartas 
--- ordenadas de mayor a menor valor según la jerarquía que ya definiste en el insert
-CREATE VIEW vw_cartas_jerarquia AS
-SELECT 
-    id,
-    palo,
-    numero,
-    valor
-FROM cartas;
+
 
 -- =======fin de las vistas=======
 

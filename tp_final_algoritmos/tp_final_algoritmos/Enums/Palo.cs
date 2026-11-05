@@ -8,10 +8,10 @@ namespace tp_final_algoritmos.Enums
 {
     public enum Palo
     {
-        espada,
-        oro,
-        basto,
-        copa
+        espada = 1,
+        oro = 2,
+        basto = 3,
+        copa = 4
 
     }
 }
