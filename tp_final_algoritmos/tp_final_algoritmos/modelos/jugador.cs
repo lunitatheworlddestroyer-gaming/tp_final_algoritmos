@@ -15,7 +15,7 @@ namespace tp_final_algoritmos.modelos
         public bool equipo;
         //1 si es nosotros, 0 si es ellos
         public int id;
-        //para guardar quien empieza la siguiente vuelta
+        //para guardar quien empieza la siguiente vuelta, 0 si es el usuario
         public Jugador(string n, bool e, int i)
         {
             nombre = n;
