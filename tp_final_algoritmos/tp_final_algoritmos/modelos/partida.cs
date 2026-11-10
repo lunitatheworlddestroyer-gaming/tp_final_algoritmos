@@ -31,5 +31,168 @@ namespace tp_final_algoritmos.modelos
             ellos = 0;
             id_mano = 0;
         }
+        public void repartir()
+        {
+            // llamar al evento que trae las cartas de la bdd y las pone en p.cartas_jugadas
+            foreach (Carta c in this.cartas_jugadas)
+            {
+                foreach (Jugador j in this.jugadores)
+                {
+                    if (c.id_jugador == j.id)
+                    {
+                        j.mano.Add(c);
+                    }
+                }
+            }
+        }
+        public void nueva_ronda()
+        {
+            this.cartas_jugadas.Clear();
+            this.ronda.Clear();
+            foreach (Jugador j in this.jugadores)
+            {
+                j.mano.Clear();
+            }
+            this.vuelta = 1;
+            this.ganador_primera = null;
+            this.ganador_segunda = null;
+            this.ganador_tercera = null;
+        }
+        public int valor_envido(Jugador j)
+        {
+            //si hay flor toma los mas grandes y los devuelve
+            if (j.mano[0].palo == j.mano[1].palo && j.mano[0].palo == j.mano[2].palo)
+            {
+                if (j.mano[0].valor_envido > j.mano[2].valor_envido && j.mano[1].valor_envido > j.mano[2].valor_envido)
+                {
+                    return j.mano[0].valor_envido + j.mano[1].valor_envido;
+                }
+                if (j.mano[0].valor_envido > j.mano[1].valor_envido && j.mano[2].valor_envido > j.mano[1].valor_envido)
+                {
+                    return j.mano[0].valor_envido + j.mano[2].valor_envido;
+                }
+                if (j.mano[1].valor_envido > j.mano[0].valor_envido && j.mano[2].valor_envido > j.mano[0].valor_envido)
+                {
+                    return j.mano[2].valor_envido + j.mano[1].valor_envido;
+                }
+            }
+            // con 2 cartas
+            if (j.mano[0].palo == j.mano[1].palo)
+            {
+                return j.mano[0].valor_envido + j.mano[1].valor_envido;
+            }
+            if (j.mano[0].palo == j.mano[2].palo)
+            {
+                return j.mano[0].valor_envido + j.mano[2].valor_envido;
+            }
+            if (j.mano[1].palo == j.mano[2].palo)
+            {
+                return j.mano[2].valor_envido + j.mano[1].valor_envido;
+            }
+            //si no tiene cartas iguales
+            if (j.mano[0].valor_envido >= j.mano[1].valor_envido)
+            {
+                if (j.mano[0].valor_envido >= j.mano[2].valor_envido)
+                {
+                    return j.mano[0].valor_envido;
+                }
+                else
+                {
+                    return j.mano[2].valor_envido;
+                }
+
+            }
+            else
+            {
+                if (j.mano[1].valor_envido >= j.mano[2].valor_envido)
+                {
+                    return j.mano[1].valor_envido;
+                }
+                else
+                {
+                    return j.mano[2].valor_envido;
+                }
+            }
+        }
+        public bool ganador_envido()
+        {
+            Jugador j = this.jugadores[this.id_mano];
+            foreach (Jugador j2 in this.jugadores)
+            {
+                if (this.valor_envido(j) < this.valor_envido(j2))
+                {
+                    j = j2;
+                }
+            }
+            return j.equipo;
+        }
+        public int ganador_carta()
+        {
+            Carta ganadora = this.ronda[this.id_mano];
+            foreach (Carta c in this.ronda)
+            {
+                if (c.valor_truco > ganadora.valor_truco)
+                {
+                    ganadora = c;
+                }
+            }
+            return ganadora.id_jugador;
+        }
+        public bool? ganador_ronda()
+        {
+            if (this.vuelta == 2)
+            {
+                //para la segunda
+                if (this.ganador_primera == true)
+                {
+                    if (this.ganador_segunda == true || this.ganador_segunda == null)
+                    {
+                        // ganamos nosotros
+                        return true;
+                    }
+                    if (this.ganador_segunda == false)
+                    {
+                        return null;
+                    }
+                }
+                if (this.ganador_primera == false)
+                {
+                    if (this.ganador_segunda == false || this.ganador_segunda == null)
+                    {
+                        //ganan ellos
+                        return true;
+                    }
+                    if (this.ganador_segunda == true)
+                    {
+                        return null;
+                    }
+                }
+                if (this.ganador_primera == null)
+                {
+                    if (this.ganador_segunda == true)
+                    {
+                        return true;
+                    }
+                    if (this.ganador_segunda == false)
+                    {
+                        return false;
+                    }
+                }
+                return null;
+            }
+            if (this.vuelta == 3)
+            {
+
+                if (this.ganador_tercera != null)
+                {
+                    return this.ganador_tercera;
+                }
+                else
+                {
+                    return this.jugadores[this.id_mano].equipo;
+                }
+            }
+            return null;
+        }
     }
 }

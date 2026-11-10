@@ -41,33 +41,7 @@ namespace tp_final_algoritmos.modelos
             }
             return mazo;
         }
-        public void repartir(Partida p)
-        {
-            // llamar al evento que trae las cartas de la bdd y las pone en p.cartas_jugadas
-            foreach (Carta c in p.cartas_jugadas)
-            {
-                foreach (Jugador j in p.jugadores)
-                {
-                    if (c.id_jugador == j.id)
-                    {
-                        j.mano.Add(c);
-                    }
-                }
-            }
-        }
-        public void nueva_ronda(Partida p)
-        {
-            p.cartas_jugadas.Clear();
-            p.ronda.Clear();
-            foreach (Jugador j in p.jugadores)
-            {
-                j.mano.Clear();
-            }
-            p.vuelta = 1;
-            p.ganador_primera = null;
-            p.ganador_segunda = null;
-            p.ganador_tercera = null;
-        }
+
 
     }
 }
