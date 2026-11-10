@@ -9,7 +9,7 @@ namespace tp_final_algoritmos.modelos
 {
     public class Carta
     {
-        
+        public int id { get; set; }
         public int numero { get; set; }
         public Palo palo { get; set; }
         public int valor_truco { get; set; } // 13 ancho de espada a 0 los cuatros
