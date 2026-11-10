@@ -106,6 +106,8 @@
     <Compile Include="modelos\carta.cs" />
     <Compile Include="modelos\juego.cs" />
     <Compile Include="modelos\jugador.cs" />
+    <Compile Include="modelos\Jugador_bot.cs" />
+    <Compile Include="modelos\Jugador_humano.cs" />
     <Compile Include="modelos\Mazo.cs" />
     <Compile Include="modelos\partida.cs" />
     <Compile Include="Program.cs" />
