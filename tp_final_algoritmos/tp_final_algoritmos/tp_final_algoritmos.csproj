@@ -104,7 +104,6 @@
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
     <Compile Include="modelos\carta.cs" />
-    <Compile Include="modelos\juego.cs" />
     <Compile Include="modelos\jugador.cs" />
     <Compile Include="modelos\Jugador_bot.cs" />
     <Compile Include="modelos\Jugador_humano.cs" />
