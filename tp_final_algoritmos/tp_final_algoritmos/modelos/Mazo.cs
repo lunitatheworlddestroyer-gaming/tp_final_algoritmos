@@ -11,37 +11,42 @@ namespace tp_final_algoritmos.modelos
 {
     public class Mazo
     {
-        private List<Carta> cartas;
+        // CLASE QUE CONTIENE EL MAZO Y ES RESPONSABLE DE MEZCLAR Y REPARTIR LAS CARTAS A LOS JUGADORES
 
-        public List<Carta> obtener_mazo_de_bdd()
-        {
-            List<Carta> mazo = new List<Carta>();
+            private List<Carta> cartas;
+            private RepositorioCartasDAO repositorioCartasDAO;
 
-            using (MySqlConnection conexion = ConexionDAO.crear_conexion())
+            public Mazo()
             {
-                using (MySqlCommand comando = new MySqlCommand("sp_traer_cartas", conexion))
+                repositorioCartasDAO = new RepositorioCartasDAO();
+                cartas = repositorioCartasDAO.obtener_mazo_de_bdd();
+            }
+
+            public void mezclar_mazo()
+            {
+                Random random = new Random();
+                int n = cartas.Count;
+                for (int i = n - 1; i > 0; i--)
                 {
-                    using (MySqlDataReader lector = comando.ExecuteReader())
+                    int j = random.Next(0, i + 1);
+                    Carta temp = cartas[i];
+                    cartas[i] = cartas[j];
+                    cartas[j] = temp;
+                }
+            }
+
+            public void repartir_cartas(List<Jugador> jugadores)
+            {
+                int cantidad_jugadores = jugadores.Count;
+                for (int i = 0; i < 3; i++)
+                {
+                    for (int j = 0; j < cantidad_jugadores; j++)
                     {
-                        while (lector.Read())
-                        {
-                            Carta carta = new Carta();
-
-                            carta.id = lector.GetInt32("id");
-                            carta.numero = lector.GetInt32("numero");
-                            carta.palo = (Palo)lector.GetInt32("palo");
-                            carta.valor_truco = lector.GetInt32("valor_truco");
-                            carta.valor_envido = lector.GetInt32("valor_envido");
-                            carta.id_jugador = lector.GetInt32("id_jugador");
-
-                            mazo.Add(carta);
-                        }
+                        jugadores[j].mano.Add(cartas[0]);
+                        cartas.RemoveAt(0);
                     }
                 }
             }
-            return mazo;
         }
-
-
     }
-}
+

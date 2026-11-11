@@ -1,0 +1,9 @@
+// ARCHIVO JSON QUE CONTIENE LA CONFIGURACION DE LA BASE DE DATOS
+
+{
+  "Servidor": "localhost",
+  "Puerto": "3306",
+  "BaseDatos": "Trabajo_final",
+  "Usuario": "root",
+  "Clave": "admin"
+}

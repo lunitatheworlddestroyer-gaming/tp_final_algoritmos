@@ -3,11 +3,16 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using tp_final_algoritmos.Enums;
 
 namespace tp_final_algoritmos.modelos
 {
     public class Partida
     {
+        private Mazo mazo;
+        public int puntos; // es hasta 15 o hasta 30
+        public bool con_flor = false;
+        public Modo_partida modo_partida; // simple o torneo
         public int cant_jugadores;
         public int nosotros;
         public int ellos;
@@ -16,7 +21,7 @@ namespace tp_final_algoritmos.modelos
         public List<Jugador> jugadores;
         public List<Carta> cartas_jugadas { get; set; }
         //cartas en la partida
-        public List<Carta> ronda;
+        public List<Carta> cartas_en_mesa;
         //cartas en la mesa, en cada vuelta se reinicia
         public int vuelta;
         // 1, 2 y 3 como primera, segunda y tercera
@@ -48,7 +53,7 @@ namespace tp_final_algoritmos.modelos
         public void nueva_ronda()
         {
             this.cartas_jugadas.Clear();
-            this.ronda.Clear();
+            this.cartas_en_mesa.Clear();
             foreach (Jugador j in this.jugadores)
             {
                 j.mano.Clear();
@@ -128,8 +133,8 @@ namespace tp_final_algoritmos.modelos
         }
         public int ganador_carta()
         {
-            Carta ganadora = this.ronda[this.id_mano];
-            foreach (Carta c in this.ronda)
+            Carta ganadora = this.cartas_en_mesa[this.id_mano];
+            foreach (Carta c in this.cartas_en_mesa)
             {
                 if (c.valor_truco > ganadora.valor_truco)
                 {
