@@ -117,6 +117,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_juego.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_juego.Designer.cs">
+      <DependentUpon>Form_juego.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_modo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_modo.Designer.cs">
+      <DependentUpon>Form_modo.cs</DependentUpon>
+    </Compile>
     <Compile Include="modelos\carta.cs" />
     <Compile Include="modelos\jugador.cs" />
     <Compile Include="modelos\Jugador_bot.cs" />
@@ -125,6 +137,15 @@
     <Compile Include="modelos\partida.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Form1.resx">
+      <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_juego.resx">
+      <DependentUpon>Form_juego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_modo.resx">
+      <DependentUpon>Form_modo.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -133,6 +154,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <None Include="config.json" />
     <None Include="packages.config" />
@@ -148,6 +170,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <Content Include="assets\carta_reverso.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets" Condition="Exists('..\packages\System.ValueTuple.4.6.2\build\net471\System.ValueTuple.targets')" />
