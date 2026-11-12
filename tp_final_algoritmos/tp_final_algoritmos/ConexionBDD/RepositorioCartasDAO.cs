@@ -20,9 +20,11 @@ namespace tp_final_algoritmos.ConexionBDD
             using (MySqlConnection conexion = ConexionDAO.crear_conexion())
             {
                 conexion.Open();
-                using (MySqlCommand comando = new MySqlCommand("sp_traer_cartas", conexion))
+                string sql = "SELECT * " +
+                    "FROM cartas " +
+                    "ORDER BY id";
+                using (MySqlCommand comando = new MySqlCommand(sql, conexion))
                 {
-                    comando.CommandType = System.Data.CommandType.StoredProcedure;
                     using (MySqlDataReader lector = comando.ExecuteReader())
                     {
                         while (lector.Read())
@@ -34,7 +36,7 @@ namespace tp_final_algoritmos.ConexionBDD
                             carta.palo = (Palo)lector.GetInt32("palo");
                             carta.valor_truco = lector.GetInt32("valor_truco");
                             carta.valor_envido = lector.GetInt32("valor_envido");
-                            carta.id_jugador = lector.GetInt32("id_jugador");
+                            carta.id_jugador = -1;
 
                             mazo.Add(carta);
                         }
