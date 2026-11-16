@@ -10,9 +10,9 @@ namespace tp_final_algoritmos.modelos
     {
         public Jugador_bot(string n, bool e, int i)
         {
-            nombre = n;
-            equipo = e;
-            id = i;
+            this.nombre = n;
+            this.equipo = e;
+            this.id = i;
         }
     }
 }

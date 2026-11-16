@@ -34,5 +34,10 @@ namespace tp_final_algoritmos
         {
 
         }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
