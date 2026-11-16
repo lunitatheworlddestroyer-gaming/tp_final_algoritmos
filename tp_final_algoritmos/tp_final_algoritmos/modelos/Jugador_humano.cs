@@ -8,11 +8,11 @@ namespace tp_final_algoritmos.modelos
 {
     public class Jugador_humano : Jugador
     {
-        public Jugador_humano(string n, bool e, int i)
+        public Jugador_humano(string n, bool e)
         {
-            nombre = n;
-            equipo = e;
-            id = i;
+            this.nombre = n;
+            this.equipo = e;
+            this.id = 0;
         }
     }
 }

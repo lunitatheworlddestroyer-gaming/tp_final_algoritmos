@@ -13,8 +13,8 @@ namespace tp_final_algoritmos.ConexionBDD
     {
         private static string obtener_cadena_de_conexion()
         {
-            // LEO EL ARCHIVO JSON QUE CONTIENE LA CONFIGURACION DE LA BDD
-            string json = File.ReadAllText("config.json");
+            /* LEO EL ARCHIVO JSON QUE CONTIENE LA CONFIGURACION DE LA BDD
+            string json = File.ReadAllText($"bdd_config.json");
 
             // LO CONVIERTO A UN OBJETO DE LA CLASE ConfiguracionBDD
             ConfiguracionBDD config =
@@ -26,6 +26,12 @@ namespace tp_final_algoritmos.ConexionBDD
                 $";database={config.baseDatos}" +
                 $";uid={config.usuario}" +
                 $";pwd={config.clave};";
+            */
+            return "server=localhost;" +
+                "port=3306;" +
+                "database=Trabajo_final;" +
+                "uid=root;" +
+                "pwd=admin;";
         }
 
         public static MySqlConnection crear_conexion()

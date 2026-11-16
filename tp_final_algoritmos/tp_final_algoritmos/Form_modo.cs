@@ -12,8 +12,10 @@ namespace tp_final_algoritmos
 {
     public partial class Form_modo : Form
     {
-        public Form_modo()
+        public modelos.Jugador_humano player;
+        public Form_modo(modelos.Jugador_humano Player)
         {
+            modelos.Jugador_humano player = Player;
             InitializeComponent();
         }
 
@@ -33,9 +35,45 @@ namespace tp_final_algoritmos
 
         private void btn_jugar_Click(object sender, EventArgs e)
         {
-            Form_juego form_juego = new Form_juego();
-            form_juego.Show();
-            this.Hide();
+            if (cbo_cant_partidas.SelectedIndex == -1)
+            {
+                err_modo.SetError(cbo_cant_partidas, "Para continuar, debe elegir el modo de juego");
+            }
+            else
+            {
+                if (cbo_cant_j.SelectedIndex == -1)
+                {
+                    err_modo.SetError(cbo_cant_j, "Para continuar, debe elegir la cantidad de jugadores");
+                }
+                else
+                {
+                    int c=0;
+                    int p;
+                    Enums.Modo_partida modo;
+                    switch (cbo_cant_j.SelectedIndex)
+                    {
+                        case 0:
+                            c = 2;
+                        break;
+                        case 1:
+                            c = 4;
+                        break;
+                        case 2:
+                            c = 6;
+                        break;
+
+                    }
+                    if (rb_15p.Checked) { p = 15; }
+                    else { p = 30; }
+                    if (cbo_cant_partidas.SelectedIndex == 0) {modo = Enums.Modo_partida.simple; }
+                    else { modo = Enums.Modo_partida.torneo; }
+                    modelos.Partida partida = new modelos.Partida(c, p, modo, player);
+                    Form_juego form_juego = new Form_juego();
+                    form_juego.Show();
+                    this.Hide();
+                
+                }
+            }
         }
     }
 }

@@ -28,12 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.btn_jugar = new System.Windows.Forms.Button();
-            this.cbo_cant_jugadores = new System.Windows.Forms.ComboBox();
+            this.cbo_cant_partidas = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.rb_15p = new System.Windows.Forms.RadioButton();
             this.rb_30p = new System.Windows.Forms.RadioButton();
             this.chk_oloroso = new System.Windows.Forms.CheckBox();
+            this.cbo_cant_j = new System.Windows.Forms.ComboBox();
+            this.err_modo = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.err_modo)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_jugar
@@ -46,18 +50,21 @@
             this.btn_jugar.UseVisualStyleBackColor = true;
             this.btn_jugar.Click += new System.EventHandler(this.btn_jugar_Click);
             // 
-            // cbo_cant_jugadores
+            // cbo_cant_partidas
             // 
-            this.cbo_cant_jugadores.AutoCompleteCustomSource.AddRange(new string[] {
+            this.cbo_cant_partidas.AutoCompleteCustomSource.AddRange(new string[] {
             "1 vs 1",
             "2 vs 2",
             "3 vs 3"});
-            this.cbo_cant_jugadores.FormattingEnabled = true;
-            this.cbo_cant_jugadores.Location = new System.Drawing.Point(230, 35);
-            this.cbo_cant_jugadores.Name = "cbo_cant_jugadores";
-            this.cbo_cant_jugadores.Size = new System.Drawing.Size(294, 24);
-            this.cbo_cant_jugadores.TabIndex = 1;
-            this.cbo_cant_jugadores.Text = "Modo de juego";
+            this.cbo_cant_partidas.FormattingEnabled = true;
+            this.cbo_cant_partidas.Items.AddRange(new object[] {
+            "Partida simple",
+            "Torneo"});
+            this.cbo_cant_partidas.Location = new System.Drawing.Point(230, 35);
+            this.cbo_cant_partidas.Name = "cbo_cant_partidas";
+            this.cbo_cant_partidas.Size = new System.Drawing.Size(294, 24);
+            this.cbo_cant_partidas.TabIndex = 1;
+            this.cbo_cant_partidas.Text = "Modo de juego";
             // 
             // label1
             // 
@@ -95,27 +102,51 @@
             // 
             this.chk_oloroso.AutoSize = true;
             this.chk_oloroso.Enabled = false;
-            this.chk_oloroso.Location = new System.Drawing.Point(314, 154);
+            this.chk_oloroso.Location = new System.Drawing.Point(314, 209);
             this.chk_oloroso.Name = "chk_oloroso";
             this.chk_oloroso.Size = new System.Drawing.Size(52, 20);
             this.chk_oloroso.TabIndex = 5;
             this.chk_oloroso.Text = "Flor";
             this.chk_oloroso.UseVisualStyleBackColor = true;
             // 
+            // cbo_cant_j
+            // 
+            this.cbo_cant_j.AutoCompleteCustomSource.AddRange(new string[] {
+            "1 vs 1",
+            "2 vs 2",
+            "3 vs 3"});
+            this.cbo_cant_j.FormattingEnabled = true;
+            this.cbo_cant_j.Items.AddRange(new object[] {
+            "1 vs 1",
+            "2 vs 2",
+            "3 vs 3"});
+            this.cbo_cant_j.Location = new System.Drawing.Point(230, 150);
+            this.cbo_cant_j.Name = "cbo_cant_j";
+            this.cbo_cant_j.Size = new System.Drawing.Size(294, 24);
+            this.cbo_cant_j.TabIndex = 6;
+            this.cbo_cant_j.Text = "Cantidad de jugadores";
+            // 
+            // err_modo
+            // 
+            this.err_modo.ContainerControl = this;
+            // 
             // Form_modo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.White;
+            this.ClientSize = new System.Drawing.Size(780, 450);
+            this.Controls.Add(this.cbo_cant_j);
             this.Controls.Add(this.chk_oloroso);
             this.Controls.Add(this.rb_30p);
             this.Controls.Add(this.rb_15p);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.cbo_cant_jugadores);
+            this.Controls.Add(this.cbo_cant_partidas);
             this.Controls.Add(this.btn_jugar);
             this.Name = "Form_modo";
-            this.Text = "Form_modo";
+            this.Text = "Opciones de partida";
             this.Load += new System.EventHandler(this.Form_modo_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.err_modo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -124,10 +155,12 @@
         #endregion
 
         private System.Windows.Forms.Button btn_jugar;
-        private System.Windows.Forms.ComboBox cbo_cant_jugadores;
+        private System.Windows.Forms.ComboBox cbo_cant_partidas;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.RadioButton rb_15p;
         private System.Windows.Forms.RadioButton rb_30p;
         private System.Windows.Forms.CheckBox chk_oloroso;
+        private System.Windows.Forms.ComboBox cbo_cant_j;
+        private System.Windows.Forms.ErrorProvider err_modo;
     }
 }

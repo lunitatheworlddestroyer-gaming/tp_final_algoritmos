@@ -29,12 +29,27 @@ namespace tp_final_algoritmos.modelos
         public bool? ganador_segunda;
         public bool? ganador_tercera;
 
-        public Partida(int c)
+        public Partida(int c, int Puntos, Modo_partida modo, Jugador_humano player)
         {
-            cant_jugadores = c;
-            nosotros = 0;
-            ellos = 0;
-            id_mano = 0;
+            this.cant_jugadores = c;
+            this.nosotros = 0;
+            this.ellos = 0;
+            this.id_mano = 0;
+            this.puntos = Puntos;
+            this.modo_partida = modo;
+            this.jugadores.Add(player);
+            bool e = false;
+            for(int i = 1; i<c; i++)
+            {
+                e = !e;
+                Jugador_bot bot = new Jugador_bot($"PC {i}", e, i);
+                this.jugadores.Add(bot);
+            }
+            this.vuelta = 1;
+            Mazo Mazo = new Mazo();
+            this.mazo = Mazo;
+            this.mazo.mezclar_mazo();
+            this.mazo.repartir_cartas(this.jugadores);
         }
         public void repartir()
         {
