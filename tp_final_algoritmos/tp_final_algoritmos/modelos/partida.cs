@@ -219,5 +219,9 @@ namespace tp_final_algoritmos.modelos
             }
             return null;
         }
+        public void loop_partida()
+        {
+            bool? fin;
+        }
     }
 }

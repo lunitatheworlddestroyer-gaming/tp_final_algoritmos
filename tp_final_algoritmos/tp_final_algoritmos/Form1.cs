@@ -66,5 +66,28 @@ namespace tp_final_algoritmos
             form_Modo.Show();
             this.Hide();
         }
+
+        private void btn_registrarse_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrWhiteSpace(txt_usuario.Text))
+            {
+                err_login.SetError(txt_usuario, "Para registrarse ingrese un nombre de usuario, sino presione \"Jugar sin registrarse\"");
+            }
+            else
+            {
+                if (string.IsNullOrWhiteSpace(txt_pass.Text))
+                {
+                    err_login.SetError(txt_pass, "Para registrarse debe ingresar una contraseña");
+                }
+                else
+                {
+                    UsuariosDAO registro = new UsuariosDAO();
+                    string r = registro.registro(txt_usuario.Text.Trim(), txt_pass.Text.Trim());
+                    MessageBox.Show($"{r}", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    txt_usuario.Text = "";
+                    txt_pass.Text = "";
+                }
+            }
+        }
     }
 }

@@ -35,6 +35,7 @@ namespace tp_final_algoritmos
                     btn_subir.Text = "Quiero vale 4";
                     break;
                 case Truco.vale_4:
+                    lbl_truco.Text = "Te respondieron quiero vale 4";
                     btn_subir.Text = "Quiero vale 4";
                     btn_subir.Enabled = false;
                     break;
