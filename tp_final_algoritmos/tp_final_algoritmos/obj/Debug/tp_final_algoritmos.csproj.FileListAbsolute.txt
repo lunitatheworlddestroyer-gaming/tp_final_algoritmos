@@ -92,3 +92,4 @@ C:\Users\yo.DESKTOP-1KTLJBB\Desktop\backup tp algo\tp_final_algoritmos\tp_final_
 C:\Users\yo.DESKTOP-1KTLJBB\Desktop\backup tp algo\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Debug\tp_final.FC864C20.Up2Date
 C:\Users\yo.DESKTOP-1KTLJBB\Desktop\backup tp algo\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Debug\tp_final_algoritmos.exe
 C:\Users\yo.DESKTOP-1KTLJBB\Desktop\backup tp algo\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Debug\tp_final_algoritmos.pdb
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Debug\tp_final_algoritmos.Form_envido.resources

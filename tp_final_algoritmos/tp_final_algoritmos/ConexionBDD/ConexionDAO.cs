@@ -30,8 +30,7 @@ namespace tp_final_algoritmos.ConexionBDD
             return "server=localhost;" +
                 "port=3306;" +
                 "database=Trabajo_final;" +
-                "uid=root;" +
-                "pwd=admin;";
+                "uid=root;";
         }
 
         public static MySqlConnection crear_conexion()

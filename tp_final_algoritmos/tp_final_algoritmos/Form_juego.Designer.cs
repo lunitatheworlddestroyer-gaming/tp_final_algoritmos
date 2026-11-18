@@ -51,6 +51,12 @@
             this.pcb_2 = new System.Windows.Forms.PictureBox();
             this.pcb_1 = new System.Windows.Forms.PictureBox();
             this.pcb_0 = new System.Windows.Forms.PictureBox();
+            this.lbl_jugador = new System.Windows.Forms.Label();
+            this.lbl_bot4 = new System.Windows.Forms.Label();
+            this.lbl_bot2 = new System.Windows.Forms.Label();
+            this.lbl_bot1 = new System.Windows.Forms.Label();
+            this.lbl_bot3 = new System.Windows.Forms.Label();
+            this.lbl_bot5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_0)).BeginInit();
@@ -109,6 +115,7 @@
             this.btn_mazo.TabIndex = 3;
             this.btn_mazo.Text = "Irse al mazo";
             this.btn_mazo.UseVisualStyleBackColor = true;
+            this.btn_mazo.Click += new System.EventHandler(this.btn_mazo_Click);
             // 
             // pcb_bot4_2
             // 
@@ -203,7 +210,7 @@
             // pcb_bot3_2
             // 
             this.pcb_bot3_2.Image = ((System.Drawing.Image)(resources.GetObject("pcb_bot3_2.Image")));
-            this.pcb_bot3_2.Location = new System.Drawing.Point(-120, 255);
+            this.pcb_bot3_2.Location = new System.Drawing.Point(-120, 251);
             this.pcb_bot3_2.Name = "pcb_bot3_2";
             this.pcb_bot3_2.Size = new System.Drawing.Size(281, 111);
             this.pcb_bot3_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -213,7 +220,7 @@
             // pcb_bot3_1
             // 
             this.pcb_bot3_1.Image = ((System.Drawing.Image)(resources.GetObject("pcb_bot3_1.Image")));
-            this.pcb_bot3_1.Location = new System.Drawing.Point(-120, 219);
+            this.pcb_bot3_1.Location = new System.Drawing.Point(-120, 215);
             this.pcb_bot3_1.Name = "pcb_bot3_1";
             this.pcb_bot3_1.Size = new System.Drawing.Size(281, 111);
             this.pcb_bot3_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -223,7 +230,7 @@
             // pcb_bot3_0
             // 
             this.pcb_bot3_0.Image = ((System.Drawing.Image)(resources.GetObject("pcb_bot3_0.Image")));
-            this.pcb_bot3_0.Location = new System.Drawing.Point(-120, 184);
+            this.pcb_bot3_0.Location = new System.Drawing.Point(-120, 180);
             this.pcb_bot3_0.Name = "pcb_bot3_0";
             this.pcb_bot3_0.Size = new System.Drawing.Size(281, 111);
             this.pcb_bot3_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -290,12 +297,73 @@
             this.pcb_0.TabIndex = 4;
             this.pcb_0.TabStop = false;
             // 
+            // lbl_jugador
+            // 
+            this.lbl_jugador.AutoSize = true;
+            this.lbl_jugador.Location = new System.Drawing.Point(522, 653);
+            this.lbl_jugador.Name = "lbl_jugador";
+            this.lbl_jugador.Size = new System.Drawing.Size(127, 16);
+            this.lbl_jugador.TabIndex = 22;
+            this.lbl_jugador.Tag = "";
+            this.lbl_jugador.Text = "Nombre del jugador";
+            // 
+            // lbl_bot4
+            // 
+            this.lbl_bot4.AutoSize = true;
+            this.lbl_bot4.Location = new System.Drawing.Point(887, 496);
+            this.lbl_bot4.Name = "lbl_bot4";
+            this.lbl_bot4.Size = new System.Drawing.Size(37, 16);
+            this.lbl_bot4.TabIndex = 23;
+            this.lbl_bot4.Text = "Bot 4";
+            // 
+            // lbl_bot2
+            // 
+            this.lbl_bot2.AutoSize = true;
+            this.lbl_bot2.Location = new System.Drawing.Point(887, 291);
+            this.lbl_bot2.Name = "lbl_bot2";
+            this.lbl_bot2.Size = new System.Drawing.Size(37, 16);
+            this.lbl_bot2.TabIndex = 24;
+            this.lbl_bot2.Text = "Bot 2";
+            // 
+            // lbl_bot1
+            // 
+            this.lbl_bot1.AutoSize = true;
+            this.lbl_bot1.Location = new System.Drawing.Point(571, 192);
+            this.lbl_bot1.Name = "lbl_bot1";
+            this.lbl_bot1.Size = new System.Drawing.Size(37, 16);
+            this.lbl_bot1.TabIndex = 25;
+            this.lbl_bot1.Text = "Bot 1";
+            // 
+            // lbl_bot3
+            // 
+            this.lbl_bot3.AutoSize = true;
+            this.lbl_bot3.Location = new System.Drawing.Point(208, 291);
+            this.lbl_bot3.Name = "lbl_bot3";
+            this.lbl_bot3.Size = new System.Drawing.Size(37, 16);
+            this.lbl_bot3.TabIndex = 26;
+            this.lbl_bot3.Text = "Bot 3";
+            // 
+            // lbl_bot5
+            // 
+            this.lbl_bot5.AutoSize = true;
+            this.lbl_bot5.Location = new System.Drawing.Point(208, 496);
+            this.lbl_bot5.Name = "lbl_bot5";
+            this.lbl_bot5.Size = new System.Drawing.Size(37, 16);
+            this.lbl_bot5.TabIndex = 27;
+            this.lbl_bot5.Text = "Bot 5";
+            // 
             // Form_juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 852);
+            this.Controls.Add(this.lbl_bot5);
+            this.Controls.Add(this.lbl_bot3);
+            this.Controls.Add(this.lbl_bot1);
+            this.Controls.Add(this.lbl_bot2);
+            this.Controls.Add(this.lbl_bot4);
+            this.Controls.Add(this.lbl_jugador);
             this.Controls.Add(this.pcb_bot4_2);
             this.Controls.Add(this.pcb_bot4_1);
             this.Controls.Add(this.pcb_bot4_0);
@@ -340,6 +408,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcb_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_0)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -367,5 +436,11 @@
         private System.Windows.Forms.PictureBox pcb_bot4_0;
         private System.Windows.Forms.PictureBox pcb_bot4_1;
         private System.Windows.Forms.PictureBox pcb_bot4_2;
+        private System.Windows.Forms.Label lbl_jugador;
+        private System.Windows.Forms.Label lbl_bot4;
+        private System.Windows.Forms.Label lbl_bot2;
+        private System.Windows.Forms.Label lbl_bot1;
+        private System.Windows.Forms.Label lbl_bot3;
+        private System.Windows.Forms.Label lbl_bot5;
     }
 }

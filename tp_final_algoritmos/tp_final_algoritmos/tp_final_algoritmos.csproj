@@ -109,14 +109,22 @@
     <Compile Include="ConexionBDD\RepositorioCartasDAO.cs" />
     <Compile Include="ConexionBDD\UsuariosDAO.cs" />
     <Compile Include="Enums\Accion.cs" />
+    <Compile Include="Enums\envido.cs" />
     <Compile Include="Enums\Modo_partida.cs" />
     <Compile Include="Enums\Palo.cs" />
     <Compile Include="Enums\Tipo_canto.cs" />
+    <Compile Include="Enums\truco.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Form_envido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_envido.Designer.cs">
+      <DependentUpon>Form_envido.cs</DependentUpon>
     </Compile>
     <Compile Include="Form_juego.cs">
       <SubType>Form</SubType>
@@ -130,6 +138,12 @@
     <Compile Include="Form_modo.Designer.cs">
       <DependentUpon>Form_modo.cs</DependentUpon>
     </Compile>
+    <Compile Include="Form_truco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Form_truco.Designer.cs">
+      <DependentUpon>Form_truco.cs</DependentUpon>
+    </Compile>
     <Compile Include="modelos\carta.cs" />
     <Compile Include="modelos\jugador.cs" />
     <Compile Include="modelos\Jugador_bot.cs" />
@@ -141,11 +155,17 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Form_envido.resx">
+      <DependentUpon>Form_envido.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_juego.resx">
       <DependentUpon>Form_juego.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_modo.resx">
       <DependentUpon>Form_modo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Form_truco.resx">
+      <DependentUpon>Form_truco.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
