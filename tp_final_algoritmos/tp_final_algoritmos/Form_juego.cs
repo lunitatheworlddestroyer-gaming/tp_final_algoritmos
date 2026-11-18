@@ -15,8 +15,11 @@ namespace tp_final_algoritmos
         public modelos.Partida partida;
         public Form_juego(modelos.Partida Partida)
         {
-            this.partida = Partida;
             InitializeComponent();
+            this.partida = Partida;
+            ttip_cartas.SetToolTip(pcb_0, partida.jugadores[0].mano[0].ToString());
+            ttip_cartas.SetToolTip(pcb_1, partida.jugadores[0].mano[1].ToString());
+            ttip_cartas.SetToolTip(pcb_2, partida.jugadores[0].mano[2].ToString());
             if (partida.cant_jugadores == 2)
             {
                 pcb_bot2_0.Visible = false;
@@ -84,17 +87,18 @@ namespace tp_final_algoritmos
         {
             using (Form_envido form_envido = new Form_envido(true, partida))
             {
-                if (form_envido.ShowDialog() == DialogResult.Yes)
+                DialogResult resultado = form_envido.ShowDialog();
+                if (resultado == DialogResult.Yes)
                 {
                     //quiso
 
                 }
-                if (form_envido.ShowDialog() == DialogResult.Cancel)
+                if (resultado == DialogResult.Cancel)
                 {
                     //no quiso
 
                 }
-                if (form_envido.ShowDialog() == DialogResult.OK)
+                if (resultado == DialogResult.OK)
                 {
                     //otras opciones
                     this.partida = form_envido.partida;
@@ -106,16 +110,17 @@ namespace tp_final_algoritmos
         {
             using (Form_truco form_truco = new Form_truco(partida))
             {
-                if (form_truco.ShowDialog() == DialogResult.Cancel)
+                DialogResult resultado = form_truco.ShowDialog();
+                if (resultado == DialogResult.Cancel)
                 {
                     //no quiso
 
                 }
-                if (form_truco.ShowDialog() == DialogResult.Yes)
+                if (resultado == DialogResult.Yes)
                 {
                     //quiso
                 }
-                if (form_truco.ShowDialog() == DialogResult.OK)
+                if (resultado == DialogResult.OK)
                 {
                     //otras opciones
                     this.partida = form_truco.partida;

@@ -117,7 +117,7 @@ BEGIN
     -- Protección extra si dos registros llegan al mismo tiempo
     DECLARE EXIT HANDLER FOR 1062
     BEGIN
-        SELECT 'Ya hay un registrado con ese nombre' AS mensaje;
+        SELECT 'No se pudo registrar porque ya hay un usuario registrado con ese nombre' AS mensaje;
     END;
 
     SELECT COUNT(*) INTO v_existe
@@ -125,13 +125,16 @@ BEGIN
     WHERE nombre = TRIM(p_nombre);
 
     IF v_existe > 0 THEN
-        SELECT 'Ya hay un registrado con ese nombre' AS mensaje;
+        SELECT 'No se pudo registrar porque ya hay un usuario registrado con ese nombre' AS mensaje;
     ELSE
         INSERT INTO usuarios (nombre, pass)
         VALUES (TRIM(p_nombre), p_pass);
 
-        SELECT 'Se pudo registrar correctamente' AS mensaje;
+        SELECT 'Se pudo registrar correctamente, ahora vuelva a introducir su usuario y contraseña para empezar a jugar' AS mensaje;
     END IF;
 END$$
 
 DELIMITER ;
+SELECT nombre, pass
+                    FROM usuarios
+                    WHERE nombre = 'test' AND pass = '1234'

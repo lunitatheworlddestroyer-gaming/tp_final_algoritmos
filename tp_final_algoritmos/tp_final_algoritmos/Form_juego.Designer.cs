@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form_juego));
             this.btn_envido = new System.Windows.Forms.Button();
             this.btn_truco = new System.Windows.Forms.Button();
@@ -57,6 +58,7 @@
             this.lbl_bot1 = new System.Windows.Forms.Label();
             this.lbl_bot3 = new System.Windows.Forms.Label();
             this.lbl_bot5 = new System.Windows.Forms.Label();
+            this.ttip_cartas = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_0)).BeginInit();
@@ -296,6 +298,7 @@
             this.pcb_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_0.TabIndex = 4;
             this.pcb_0.TabStop = false;
+            this.pcb_0.UseWaitCursor = true;
             // 
             // lbl_jugador
             // 
@@ -442,5 +445,6 @@
         private System.Windows.Forms.Label lbl_bot1;
         private System.Windows.Forms.Label lbl_bot3;
         private System.Windows.Forms.Label lbl_bot5;
+        private System.Windows.Forms.ToolTip ttip_cartas;
     }
 }

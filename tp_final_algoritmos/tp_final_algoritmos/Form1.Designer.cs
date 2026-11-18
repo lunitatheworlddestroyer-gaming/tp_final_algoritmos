@@ -90,6 +90,7 @@
             this.btn_registrarse.TabIndex = 5;
             this.btn_registrarse.Text = "Registrarse";
             this.btn_registrarse.UseVisualStyleBackColor = true;
+            this.btn_registrarse.Click += new System.EventHandler(this.btn_registrarse_Click);
             // 
             // pictureBox1
             // 
