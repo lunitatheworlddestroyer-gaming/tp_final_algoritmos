@@ -103,4 +103,35 @@ FROM usuarios;
 
 
 -- =======fin de las vistas=======
+ALTER TABLE usuarios ADD UNIQUE KEY uq_usuarios_nombre (nombre);
 
+DELIMITER $$
+
+CREATE PROCEDURE sp_registrar_usuario(
+    IN p_nombre VARCHAR(50),
+    IN p_pass VARCHAR(50)
+)
+BEGIN
+    DECLARE v_existe INT DEFAULT 0;
+
+    -- Protección extra si dos registros llegan al mismo tiempo
+    DECLARE EXIT HANDLER FOR 1062
+    BEGIN
+        SELECT 'Ya hay un registrado con ese nombre' AS mensaje;
+    END;
+
+    SELECT COUNT(*) INTO v_existe
+    FROM usuarios
+    WHERE nombre = TRIM(p_nombre);
+
+    IF v_existe > 0 THEN
+        SELECT 'Ya hay un registrado con ese nombre' AS mensaje;
+    ELSE
+        INSERT INTO usuarios (nombre, pass)
+        VALUES (TRIM(p_nombre), p_pass);
+
+        SELECT 'Se pudo registrar correctamente' AS mensaje;
+    END IF;
+END$$
+
+DELIMITER ;
