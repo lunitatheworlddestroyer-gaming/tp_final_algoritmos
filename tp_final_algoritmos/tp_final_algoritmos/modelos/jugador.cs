@@ -8,6 +8,11 @@ namespace tp_final_algoritmos.modelos
 {
     public abstract class Jugador
     {
+        protected Jugador()
+        {
+            this.mano = new List<Carta>();
+        }
+
         public string nombre;
         //nombre de usuario, sino "ellos 1" o "nosotros 1", si hay tiempo ponemos nombres reales
         public List<Carta> mano;

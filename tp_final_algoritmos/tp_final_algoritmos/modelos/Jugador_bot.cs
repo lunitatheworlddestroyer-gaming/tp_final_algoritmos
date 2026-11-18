@@ -9,6 +9,7 @@ namespace tp_final_algoritmos.modelos
     public class Jugador_bot : Jugador
     {
         public Jugador_bot(string n, bool e, int i)
+            : base()
         {
             this.nombre = n;
             this.equipo = e;

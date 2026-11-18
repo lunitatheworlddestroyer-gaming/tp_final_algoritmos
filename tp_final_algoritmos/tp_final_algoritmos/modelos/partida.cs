@@ -18,16 +18,18 @@ namespace tp_final_algoritmos.modelos
         public int ellos;
         public int id_mano;
         //id del jugador que empieza
-        public List<Jugador> jugadores;
-        public List<Carta> cartas_jugadas { get; set; }
+        public List<Jugador> jugadores = new List<Jugador>();
+        public List<Carta> cartas_jugadas { get; set; } = new List<Carta>();
         //cartas en la partida
-        public List<Carta> cartas_en_mesa;
+        public List<Carta> cartas_en_mesa = new List<Carta>();
         //cartas en la mesa, en cada vuelta se reinicia
         public int vuelta;
         // 1, 2 y 3 como primera, segunda y tercera
         public bool? ganador_primera;
         public bool? ganador_segunda;
         public bool? ganador_tercera;
+        public Envido envido;
+        public Truco truco;
 
         public Partida(int c, int Puntos, Modo_partida modo, Jugador_humano player)
         {
@@ -37,8 +39,9 @@ namespace tp_final_algoritmos.modelos
             this.id_mano = 0;
             this.puntos = Puntos;
             this.modo_partida = modo;
+            this.jugadores = new List<Jugador>();
             this.jugadores.Add(player);
-            bool e = false;
+            bool e = true;
             for(int i = 1; i<c; i++)
             {
                 e = !e;
@@ -50,6 +53,8 @@ namespace tp_final_algoritmos.modelos
             this.mazo = Mazo;
             this.mazo.mezclar_mazo();
             this.mazo.repartir_cartas(this.jugadores);
+            this.envido = Envido.no;
+            this.truco = Truco.no;
         }
         public void repartir()
         {

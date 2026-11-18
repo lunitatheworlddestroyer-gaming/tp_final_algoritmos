@@ -15,7 +15,7 @@ namespace tp_final_algoritmos
         public modelos.Jugador_humano player;
         public Form_modo(modelos.Jugador_humano Player)
         {
-            modelos.Jugador_humano player = Player;
+            this.player = Player;
             InitializeComponent();
         }
 
@@ -35,6 +35,12 @@ namespace tp_final_algoritmos
 
         private void btn_jugar_Click(object sender, EventArgs e)
         {
+            if (player == null)
+            {
+                MessageBox.Show("No se pudo iniciar la partida porque el jugador no está inicializado.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             if (cbo_cant_partidas.SelectedIndex == -1)
             {
                 err_modo.SetError(cbo_cant_partidas, "Para continuar, debe elegir el modo de juego");
@@ -68,7 +74,7 @@ namespace tp_final_algoritmos
                     if (cbo_cant_partidas.SelectedIndex == 0) {modo = Enums.Modo_partida.simple; }
                     else { modo = Enums.Modo_partida.torneo; }
                     modelos.Partida partida = new modelos.Partida(c, p, modo, player);
-                    Form_juego form_juego = new Form_juego();
+                    Form_juego form_juego = new Form_juego(partida);
                     form_juego.Show();
                     this.Hide();
                 
