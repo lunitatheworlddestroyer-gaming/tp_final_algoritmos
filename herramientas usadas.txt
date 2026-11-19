@@ -1,0 +1,9 @@
+Microsoft Visual Studio para programar
+
+MySQL Workbench y Xampp para la base de datos
+
+https://www.makewordart.com/# para el logo
+
+https://commons.wikimedia.org/wiki/Special:WhatLinksHere/File:Baraja_espa%C3%B1ola_completa.png para las imágenes de las cartas
+{atribuciones a cada una de las cartas:
+Basquetteur and Germarquezm, CC BY-SA 3.0 <https://creativecommons.org/licenses/by-sa/3.0>, via Wikimedia Commons, CC BY-SA 3.0, via Wikimedia Commons

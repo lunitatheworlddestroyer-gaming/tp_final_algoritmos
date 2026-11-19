@@ -3,36 +3,44 @@
   "WorkspaceRootPath": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\form_juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\mazo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\mazo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|c:\\users\\yo.desktop-1ktljbb\\documents\\github\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\partida.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\jugador.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\jugador_humano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\jugador_humano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\enums\\envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\enums\\envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\mazo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\mazo.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\form_juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_juego.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\jugador_humano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\jugador_humano.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\modelos\\carta.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\conexionbdd\\usuariosdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,16 +63,8 @@
       "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_truco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\form_envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\enums\\truco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\enums\\truco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\enums\\envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|solutionrelative:tp_final_algoritmos\\enums\\envido.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C8856DBC-B7EF-4B46-BDE8-0B7CBAD89F58}|tp_final_algoritmos\\tp_final_algoritmos.csproj|C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\enums\\accion.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -98,11 +98,11 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 6,
+          "SelectedChildIndex": 2,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 11,
+              "DocumentIndex": 13,
               "Title": "Form1.cs",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form1.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\Form1.cs",
@@ -111,75 +111,17 @@
               "ViewState": "AgIAAEUAAAAAAAAAAAA6wFcAAAAnAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-12T00:04:47.469Z",
-              "IsPinned": true,
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Form_juego.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_juego.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_juego.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_juego.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\Form_juego.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAQwBUAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T00:34:42.839Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "Jugador_humano.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Jugador_humano.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\Jugador_humano.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Jugador_humano.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\modelos\\Jugador_humano.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAmwAoAAAAvAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-16T12:48:20.655Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
+              "IsPinned": true
             },
             {
               "$type": "Document",
               "DocumentIndex": 2,
-              "Title": "Mazo.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Mazo.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\Mazo.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Mazo.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\modelos\\Mazo.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-16T13:55:45Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "carta.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\carta.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\carta.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\carta.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\modelos\\carta.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAA1wAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-18T14:54:29.418Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "jugador.cs",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\jugador.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\jugador.cs",
               "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\jugador.cs",
               "RelativeToolTip": "tp_final_algoritmos\\modelos\\jugador.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAmwBcAAAAOAAAAAAAAAA==",
+              "ViewState": "AgIAABMAAAAAAAAAAAAAABcAAAAWAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-16T12:48:08.554Z",
               "EditorCaption": "",
@@ -188,12 +130,26 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "Form_juego.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_juego.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_juego.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_juego.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\Form_juego.cs",
+              "ViewState": "AgIAADoAAAAAAAAAAAAkwIwAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-12T00:34:42.839Z",
+              "EditorCaption": "",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "partida.cs",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\partida.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\partida.cs",
               "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\partida.cs",
               "RelativeToolTip": "tp_final_algoritmos\\modelos\\partida.cs",
-              "ViewState": "AgIAANcAAAAAAAAAAAAAAN8AAAAWAAAAAAAAAA==",
+              "ViewState": "AgIAAOIAAAAAAAAAAAAwwF0AAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-11-16T13:29:03.319Z",
               "EditorCaption": "",
@@ -201,48 +157,46 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Mazo.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Mazo.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\Mazo.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Mazo.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\modelos\\Mazo.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-16T13:55:45Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "envido.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Enums\\envido.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\Enums\\envido.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Enums\\envido.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\Enums\\envido.cs",
+              "ViewState": "AgIAAAoAAAAAAAAAAAA2wBUAAAAuAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T23:17:49.435Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "Form_envido.cs [Dise\u00F1o]",
+              "Title": "Form_envido.cs",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_envido.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs [Dise\u00F1o]",
-              "RelativeToolTip": "tp_final_algoritmos\\Form_envido.cs [Dise\u00F1o]",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\Form_envido.cs",
+              "ViewState": "AgIAAKwAAAAAAAAAAAAgwKQAAABIAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-16T19:30:52.232Z",
-              "EditorCaption": " [Dise\u00F1o]",
+              "WhenOpened": "2026-11-16T19:36:25.374Z",
               "OwnerCaption": "%2"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "UsuariosDAO.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAiwDcAAAAlAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-14T16:05:54.619Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "Form_truco.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_truco.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_truco.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_truco.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\Form_truco.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAArwCUAAABFAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T23:26:53.747Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 6,
               "Title": "Form_juego.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_juego.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_juego.cs",
@@ -255,47 +209,89 @@
             },
             {
               "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Jugador_humano.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Jugador_humano.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\Jugador_humano.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\Jugador_humano.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\modelos\\Jugador_humano.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAmwA0AAAAcAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-16T12:48:20.655Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "carta.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\carta.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\modelos\\carta.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\modelos\\carta.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\modelos\\carta.cs",
+              "ViewState": "AgIAAAUAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-18T14:54:29.418Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "Form_envido.cs [Dise\u00F1o]",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_envido.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs [Dise\u00F1o]",
+              "RelativeToolTip": "tp_final_algoritmos\\Form_envido.cs [Dise\u00F1o]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-16T19:30:52.232Z",
+              "OwnerCaption": "%2"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 10,
+              "Title": "UsuariosDAO.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\ConexionBDD\\UsuariosDAO.cs",
+              "ViewState": "AgIAACMAAAAAAAAAAAAiwDcAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-14T16:05:54.619Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "Form_truco.cs",
+              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_truco.cs",
+              "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_truco.cs",
+              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_truco.cs",
+              "RelativeToolTip": "tp_final_algoritmos\\Form_truco.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAArwCUAAABFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-11-17T23:26:53.747Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "Form1.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form1.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\Form1.cs",
               "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form1.cs [Dise\u00F1o]",
               "RelativeToolTip": "tp_final_algoritmos\\Form1.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-10-20T12:46:21.417Z",
-              "EditorCaption": " [Dise\u00F1o]",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-10-20T12:46:21.417Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 12,
+              "DocumentIndex": 14,
               "Title": "Form_truco.cs [Dise\u00F1o]",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_truco.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_truco.cs",
               "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_truco.cs [Dise\u00F1o]",
               "RelativeToolTip": "tp_final_algoritmos\\Form_truco.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T23:22:59.635Z",
-              "EditorCaption": " [Dise\u00F1o]",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-17T23:22:59.635Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Form_envido.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\Form_envido.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_envido.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\Form_envido.cs",
-              "ViewState": "AgIAABkAAAAAAAAAAAAkwBEAAAAPAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-16T19:36:25.374Z",
-              "EditorCaption": "",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
+              "DocumentIndex": 15,
               "Title": "truco.cs",
               "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Enums\\truco.cs",
               "RelativeDocumentMoniker": "tp_final_algoritmos\\Enums\\truco.cs",
@@ -303,21 +299,7 @@
               "RelativeToolTip": "tp_final_algoritmos\\Enums\\truco.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T23:19:55.169Z",
-              "OwnerCaption": "%2"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "envido.cs",
-              "DocumentMoniker": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Enums\\envido.cs",
-              "RelativeDocumentMoniker": "tp_final_algoritmos\\Enums\\envido.cs",
-              "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Enums\\envido.cs",
-              "RelativeToolTip": "tp_final_algoritmos\\Enums\\envido.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAIwAgAAAARAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-17T23:17:49.435Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-17T23:19:55.169Z"
             },
             {
               "$type": "Document",
@@ -329,8 +311,7 @@
               "RelativeToolTip": "tp_final_algoritmos\\Enums\\Accion.cs",
               "ViewState": "AgIAAAUAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-16T14:13:00.527Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-16T14:13:00.527Z"
             },
             {
               "$type": "Document",
@@ -341,8 +322,7 @@
               "ToolTip": "C:\\Users\\yo.DESKTOP-1KTLJBB\\Documents\\GitHub\\tp_final_algoritmos\\tp_final_algoritmos\\tp_final_algoritmos\\Form_modo.cs [Dise\u00F1o]",
               "RelativeToolTip": "tp_final_algoritmos\\Form_modo.cs [Dise\u00F1o]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T00:06:37.794Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-12T00:06:37.794Z"
             },
             {
               "$type": "Document",
@@ -354,8 +334,7 @@
               "RelativeToolTip": "tp_final_algoritmos\\Form_modo.cs",
               "ViewState": "AgIAADsAAAAAAAAAAAAowE0AAAAmAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-12T00:14:45.908Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-12T00:14:45.908Z"
             },
             {
               "$type": "Document",
@@ -367,8 +346,7 @@
               "RelativeToolTip": "tp_final_algoritmos\\ConexionBDD\\ConexionDAO.cs",
               "ViewState": "AgIAABQAAAAAAAAAAAAAwCAAAAAbAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-14T17:22:24.748Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-14T17:22:24.748Z"
             },
             {
               "$type": "Document",
@@ -380,8 +358,7 @@
               "RelativeToolTip": "tp_final_algoritmos\\modelos\\Jugador_bot.cs",
               "ViewState": "AgIAAAoAAAAAAAAAAIBQwA8AAAARAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-11-16T13:44:55.14Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-16T13:44:55.14Z"
             },
             {
               "$type": "Document",
@@ -393,8 +370,7 @@
               "RelativeToolTip": "tp_final_algoritmos\\bdd_config.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2026-11-14T17:23:37.67Z",
-              "OwnerCaption": "%2"
+              "WhenOpened": "2026-11-14T17:23:37.67Z"
             }
           ]
         }

@@ -15,5 +15,10 @@ namespace tp_final_algoritmos.Enums
         envido_real_envido,
         envido_envido_real_envido,
         falta_envido
+        envido_falta_envido,
+        envido_envido_falta_envido,
+        real_envido_falta_envido,
+        envido_real_envido_falta_envido,
+        envido_envido_real_envido_falta_envido,
     }
 }
