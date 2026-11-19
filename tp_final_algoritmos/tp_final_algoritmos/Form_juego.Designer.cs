@@ -271,6 +271,7 @@
             // 
             // pcb_2
             // 
+            this.pcb_2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_2.ErrorImage")));
             this.pcb_2.Image = ((System.Drawing.Image)(resources.GetObject("pcb_2.Image")));
             this.pcb_2.Location = new System.Drawing.Point(726, 702);
             this.pcb_2.Name = "pcb_2";
@@ -281,6 +282,7 @@
             // 
             // pcb_1
             // 
+            this.pcb_1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_1.ErrorImage")));
             this.pcb_1.Image = ((System.Drawing.Image)(resources.GetObject("pcb_1.Image")));
             this.pcb_1.Location = new System.Drawing.Point(514, 702);
             this.pcb_1.Name = "pcb_1";
@@ -291,6 +293,7 @@
             // 
             // pcb_0
             // 
+            this.pcb_0.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_0.ErrorImage")));
             this.pcb_0.Image = ((System.Drawing.Image)(resources.GetObject("pcb_0.Image")));
             this.pcb_0.Location = new System.Drawing.Point(305, 702);
             this.pcb_0.Name = "pcb_0";

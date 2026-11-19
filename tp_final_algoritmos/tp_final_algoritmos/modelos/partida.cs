@@ -30,6 +30,7 @@ namespace tp_final_algoritmos.modelos
         public bool? ganador_tercera;
         public Envido envido;
         public Truco truco;
+        public bool envido_cantado;
 
         public Partida(int c, int Puntos, Modo_partida modo, Jugador_humano player)
         {
@@ -42,7 +43,7 @@ namespace tp_final_algoritmos.modelos
             this.jugadores = new List<Jugador>();
             this.jugadores.Add(player);
             bool e = true;
-            for(int i = 1; i<c; i++)
+            for (int i = 1; i < c; i++)
             {
                 e = !e;
                 Jugador_bot bot = new Jugador_bot($"PC {i}", e, i);
@@ -55,6 +56,7 @@ namespace tp_final_algoritmos.modelos
             this.mazo.repartir_cartas(this.jugadores);
             this.envido = Envido.no;
             this.truco = Truco.no;
+            this.envido_cantado = false;
         }
         public void repartir()
         {
@@ -70,6 +72,7 @@ namespace tp_final_algoritmos.modelos
                 }
             }
         }
+
         public void nueva_ronda()
         {
             this.cartas_jugadas.Clear();
@@ -82,6 +85,13 @@ namespace tp_final_algoritmos.modelos
             this.ganador_primera = null;
             this.ganador_segunda = null;
             this.ganador_tercera = null;
+            Mazo Mazo = new Mazo();
+            this.mazo = Mazo;
+            this.mazo.mezclar_mazo();
+            this.mazo.repartir_cartas(this.jugadores);
+            this.envido = Envido.no;
+            this.truco = Truco.no;
+            this.envido_cantado = false;
         }
         public int valor_envido(Jugador j)
         {
@@ -151,6 +161,93 @@ namespace tp_final_algoritmos.modelos
             }
             return j.equipo;
         }
+        public int puntos_envido(bool quiero, Envido e, bool ganador)
+        {
+            if (quiero)
+            {
+                switch (e)
+                {
+                    case Envido.no:
+                        return 0;
+                    case Envido.envido:
+                        return 2;
+                    case Envido.envido_envido:
+                        return 4;
+                    case Envido.real_envido:
+                        return 3;
+                    case Envido.envido_real_envido:
+                        return 5;
+                    case Envido.envido_envido_real_envido:
+                        return 7;
+                    case Envido.falta_envido:
+                    case Envido.envido_falta_envido:
+                    case Envido.envido_envido_falta_envido:
+                    case Envido.real_envido_falta_envido:
+                    case Envido.envido_real_envido_falta_envido:
+                    case Envido.envido_envido_real_envido_falta_envido:
+                        if (ganador)
+                        {
+                            return this.puntos - this.ellos;
+                        }
+                        else
+                        {
+                            return this.puntos - this.nosotros;
+                        }
+                    default:
+                        return 0;
+
+                }
+            }
+            else
+            {
+                switch (e)
+                {
+                    case Envido.no:
+                        return 0;
+                    case Envido.envido:
+                        return 1;
+                    case Envido.envido_envido:
+                        return 2;
+                    case Envido.real_envido:
+                        return 1;
+                    case Envido.envido_real_envido:
+                        return 2;
+                    case Envido.envido_envido_real_envido:
+                        return 4;
+                    case Envido.falta_envido:
+                        return 1;
+                    case Envido.envido_falta_envido:
+                        return 1;
+                    case Envido.envido_envido_falta_envido:
+                        return 2;
+                    case Envido.real_envido_falta_envido:
+                        return 1;
+                    case Envido.envido_real_envido_falta_envido:
+                        return 2;
+                    case Envido.envido_envido_real_envido_falta_envido:
+                        return 4;
+                    default: 
+                        return 0;
+                }
+            }
+        }
+        public int puntos_truco(Truco t)
+        {
+            switch (t)
+            {
+                case Truco.no:
+                    return 1;
+                case Truco.truco:
+                    return 2;
+                case Truco.retruco:
+                    return 3;
+                case Truco.vale_4:
+                    return 4;
+                default:
+                    return 1;
+            }
+
+        }
         public int ganador_carta()
         {
             Carta ganadora = this.cartas_en_mesa[this.id_mano];
@@ -219,9 +316,6 @@ namespace tp_final_algoritmos.modelos
             }
             return null;
         }
-        public void loop_partida()
-        {
-            bool? fin;
-        }
+
     }
 }

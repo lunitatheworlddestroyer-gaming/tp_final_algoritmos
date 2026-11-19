@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -177,6 +177,50 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Content Include="assets\*.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="assets\1 de basto.png" />
+    <Content Include="assets\1 de copa.png" />
+    <Content Include="assets\1 de espada.png" />
+    <Content Include="assets\1 de oro.png" />
+    <Content Include="assets\10 de basto.png" />
+    <Content Include="assets\10 de copa.png" />
+    <Content Include="assets\10 de espada.png" />
+    <Content Include="assets\10 de oro.png" />
+    <Content Include="assets\11 de basto.png" />
+    <Content Include="assets\11 de copa.png" />
+    <Content Include="assets\11 de espada.png" />
+    <Content Include="assets\11 de oro.png" />
+    <Content Include="assets\12 de basto.png" />
+    <Content Include="assets\12 de copa.png" />
+    <Content Include="assets\12 de espada.png" />
+    <Content Include="assets\12 de oro.png" />
+    <Content Include="assets\2 de basto.png" />
+    <Content Include="assets\2 de copa.png" />
+    <Content Include="assets\2 de espada.png" />
+    <Content Include="assets\2 de oro.png" />
+    <Content Include="assets\3 de basto.png" />
+    <Content Include="assets\3 de copa.png" />
+    <Content Include="assets\3 de espada.png" />
+    <Content Include="assets\3 de oro.png" />
+    <Content Include="assets\4 de basto.png" />
+    <Content Include="assets\4 de copa.png" />
+    <Content Include="assets\4 de espada.png" />
+    <Content Include="assets\4 de oro.png" />
+    <Content Include="assets\5 de basto.png" />
+    <Content Include="assets\5 de copa.png" />
+    <Content Include="assets\5 de espada.png" />
+    <Content Include="assets\5 de oro.png" />
+    <Content Include="assets\6 de basto.png" />
+    <Content Include="assets\6 de copa.png" />
+    <Content Include="assets\6 de espada.png" />
+    <Content Include="assets\6 de oro.png" />
+    <Content Include="assets\7 de basto.png" />
+    <Content Include="assets\7 de copa.png" />
+    <Content Include="assets\7 de espada.png" />
+    <Content Include="assets\7 de oro.png" />
+    <Content Include="assets\carta_error.png" />
     <Content Include="assets\carta_reverso_horizontal.png" />
     <Content Include="bdd_config.json" />
     <None Include="packages.config" />

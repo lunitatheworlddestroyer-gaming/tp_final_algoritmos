@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using tp_final_algoritmos.Enums;
 
@@ -22,7 +15,7 @@ namespace tp_final_algoritmos
             this.modo = Modo;
             this.partida = Partida;
             this.envido = partida.envido;
-            
+
             // modo true si lo cante yo, false si me lo cantaron
             if (modo)
             {
@@ -64,6 +57,34 @@ namespace tp_final_algoritmos
                         btn_envido.Enabled = false;
                         btn_real_envido.Enabled = false;
                         lbl_modo.Text = "Te cantaron falta envido";
+                        break;
+                    case Envido.envido_falta_envido:
+                        this.Text = "Envido falta envido";
+                        btn_envido.Enabled = false;
+                        lbl_modo.Text = "Te respondieron falta envido";
+                        break;
+                    case Envido.envido_envido_falta_envido:
+                        this.Text = "Envido envido falta envido";
+                        btn_envido.Enabled = false;
+                        lbl_modo.Text = "Te respondieron falta envido";
+                        break;
+                    case Envido.envido_real_envido_falta_envido:
+                        this.Text = "Envido falta envido";
+                        btn_envido.Enabled = false;
+                        btn_real_envido.Enabled = false;
+                        lbl_modo.Text = "Te respondieron falta envido";
+                        break;
+                    case Envido.envido_envido_real_envido_falta_envido:
+                        this.Text = "Envido envido real envido falta envido";
+                        btn_envido.Enabled = false;
+                        btn_real_envido.Enabled = false;
+                        lbl_modo.Text = "Te respondieron falta envido";
+                        break;
+                    case Envido.real_envido_falta_envido:
+                        this.Text = "Real envido falta envido";
+                        btn_envido.Enabled = false;
+                        btn_real_envido.Enabled = false;
+                        lbl_modo.Text = "Te respondieron falta envido";
                         break;
 
                 }
@@ -127,7 +148,30 @@ namespace tp_final_algoritmos
 
         private void btn_falta_envido_Click(object sender, EventArgs e)
         {
-            partida.envido = Envido.falta_envido;
+            if (modo)
+            {
+                partida.envido = Envido.falta_envido;
+            }
+            if (envido == Envido.envido)
+            {
+                partida.envido = Envido.envido_falta_envido;
+            }
+            if (envido == Envido.envido_envido)
+            {
+                partida.envido = Envido.envido_envido_falta_envido;
+            }
+            if (envido == Envido.envido_real_envido)
+            {
+                partida.envido = Envido.envido_real_envido_falta_envido;
+            }
+            if (envido == Envido.envido_envido_real_envido)
+            {
+                partida.envido = Envido.envido_envido_real_envido_falta_envido;
+            }
+            if (envido == Envido.real_envido)
+            {
+                partida.envido = Envido.real_envido_falta_envido;
+            }
             this.DialogResult = DialogResult.OK;
             this.Close();
         }
