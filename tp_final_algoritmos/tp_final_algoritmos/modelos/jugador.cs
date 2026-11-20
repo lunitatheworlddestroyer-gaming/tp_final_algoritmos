@@ -26,5 +26,11 @@ namespace tp_final_algoritmos.modelos
             mano.Remove(c);
             return c;
         }
+        public virtual string preguntar_e(Enums.Envido e, int i) { return ""; }
+        public virtual string preguntar_t(Enums.Truco tr) { return ""; }
+        public virtual string cantar_truco() { return ""; }
+        public virtual string cantar_envido(int i) { return ""; }
+        public virtual void mirar_mano() { }
+        public virtual Carta decidir_carta(Partida p) {  return null; }
     }
 }

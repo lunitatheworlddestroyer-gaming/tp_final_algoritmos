@@ -1,0 +1,583 @@
+﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Diagnostics.Eventing.Reader;
+using System.Drawing;
+using System.IO;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+using System.Windows.Forms;
+using tp_final_algoritmos.modelos;
+
+namespace tp_final_algoritmos
+{
+    public partial class Form_juego : Form
+    {
+        public modelos.Partida partida;
+        public bool input = false;
+        public string s;
+        public bool preguntar_e = false;
+        public bool preguntar_t = false;
+
+        private void jugar_carta(PictureBox carta)
+        {
+            if (carta == null || carta.Tag == null)
+            {
+                return;
+            }
+
+            string nombre_carta = carta.Tag.ToString();
+            if (string.IsNullOrWhiteSpace(nombre_carta))
+            {
+                return;
+            }
+
+            preguntar_e = true;
+            preguntar_t = true;
+
+            DialogResult r = MessageBox.Show($"¿Seguro queres jugar la carta {nombre_carta}?", "Jugar carta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (r == DialogResult.Yes)
+            {
+                s = nombre_carta;
+                input = true;
+                carta.Tag = null;
+                carta.Visible = false;
+            }
+        }
+
+        private void cargar_imagen_carta(PictureBox p, string n)
+        {
+            string r = Path.Combine(Application.StartupPath, "assets", n + ".png");
+            if (!File.Exists(r))
+                r = Path.Combine(Application.StartupPath, "assets", "carta_error.png");
+
+            if (!File.Exists(r))
+            {
+                p.Image = null;
+                return;
+            }
+
+            try
+            {
+                using (var stream = File.OpenRead(r))
+                    p.Image = Image.FromStream(stream);
+            }
+            catch (IOException)
+            {
+                p.Image = null;
+            }
+            catch (ArgumentException)
+            {
+                p.Image = null;
+            }
+            catch (OutOfMemoryException)
+            {
+                p.Image = null;
+            }
+        }
+
+        public void inicializar_ronda()
+        {
+            ttip_cartas.SetToolTip(pcb_0, partida.jugadores[0].mano[0].ToString());
+            ttip_cartas.SetToolTip(pcb_1, partida.jugadores[0].mano[1].ToString());
+            ttip_cartas.SetToolTip(pcb_2, partida.jugadores[0].mano[2].ToString());
+
+            cargar_imagen_carta(pcb_0, partida.jugadores[0].mano[0].ToString());
+            cargar_imagen_carta(pcb_1, partida.jugadores[0].mano[1].ToString());
+            cargar_imagen_carta(pcb_2, partida.jugadores[0].mano[2].ToString());
+
+            pcb_j0_0.Visible = false;
+            pcb_j0_1.Visible = false;
+            pcb_j0_2.Visible = false;
+            pcb_j1_0.Visible = false;
+            pcb_j1_1.Visible = false;
+            pcb_j1_2.Visible = false;
+
+            pcb_0.Visible = true;
+            pcb_1.Visible = true;
+            pcb_2.Visible = true;
+            pcb_bot1_0.Visible = true;
+            pcb_bot1_1.Visible = true;
+            pcb_bot1_2.Visible = true;
+
+            pcb_0.Tag = partida.jugadores[0].mano[0].ToString();
+            pcb_1.Tag = partida.jugadores[0].mano[1].ToString();
+            pcb_2.Tag = partida.jugadores[0].mano[2].ToString();
+        }
+        public void cargar_cartas_mesa(Carta c, Partida p, int id)
+        {
+            if(p.vuelta == 1)
+            {
+                if(id == 0)
+                {
+                    cargar_imagen_carta(pcb_j0_0, c.ToString());
+                }
+                else
+                {
+                    cargar_imagen_carta(pcb_j1_0, c.ToString());
+                    pcb_bot1_0.Visible = false;
+                }
+            }
+            if (p.vuelta == 2)
+            {
+                if (id == 0)
+                {
+                    cargar_imagen_carta(pcb_j0_1, c.ToString());
+                }
+                else
+                {
+                    cargar_imagen_carta(pcb_j1_1, c.ToString());
+                    pcb_bot1_1.Visible = false;
+                }
+            }
+            if (p.vuelta == 3)
+            {
+                if (id == 0)
+                {
+                    cargar_imagen_carta(pcb_j0_2, c.ToString());
+                }
+                else
+                {
+                    cargar_imagen_carta(pcb_j1_2, c.ToString());
+                    pcb_bot1_2.Visible = false;
+                }
+            }
+        }
+        public void envido(Partida p, bool e, int id_turno)
+        {
+            string respuesta = "";
+
+            while (respuesta != "si" || respuesta != "no")
+            {
+                e = !e;
+                if (!e)
+                {
+                    respuesta = p.jugadores[id_turno + 1].preguntar_e(p.envido, p.valor_envido(p.jugadores[id_turno + 1]));
+                    p.guardar_respuesta(respuesta);
+                }
+                else
+                {
+                    using (Form_envido form_envido = new Form_envido(true, partida))
+                    {
+                        DialogResult resultado = form_envido.ShowDialog();
+                        if (resultado == DialogResult.Yes)
+                        {
+                            //quiso
+                            respuesta = "si";
+                        }
+                        if (resultado == DialogResult.Cancel)
+                        {
+                            //no quiso
+                            respuesta = "no";
+                        }
+                        if (resultado == DialogResult.OK)
+                        {
+                            //otras opciones
+                            p = form_envido.partida;
+                        }
+                    }
+                }
+
+            }
+            if (respuesta == "si")
+            {
+                p.quiso_envido = true;
+                if (p.ganador_envido())
+                {
+                    p.nosotros = p.nosotros + p.puntos_envido(p.ganador_envido());
+                }
+                else
+                {
+                    p.ellos = p.ellos + p.puntos_envido(p.ganador_envido());
+                }
+            }
+            else
+            {
+                p.quiso_envido = false;
+                if (e)
+                {
+                    p.ellos = p.ellos + p.puntos_envido(p.ganador_envido());
+                }
+                else
+                {
+                    p.nosotros = p.nosotros + p.puntos_envido(p.ganador_envido());
+                }
+            }
+
+        }
+        public void loop_juego(Partida p)
+        {
+            Carta c;
+            string r = "";
+            while (p.nosotros < p.puntos || p.ellos < p.puntos)
+            {
+                p.nueva_ronda(p.id_mano);
+                this.inicializar_ronda();
+                int id_turno = p.id_mano;
+                while (p.ganador_ronda() == null)
+                {
+                    while (p.cartas_en_mesa.Count() < p.jugadores.Count())
+                    {
+                        if (id_turno == 0)
+                        {
+                            if (p.vuelta == 1)
+                            {
+                                btn_envido.Enabled = true;
+                                while (!preguntar_e)
+                                {
+                                    Application.DoEvents();
+                                }
+                                if (p.envido != Enums.Envido.no)
+                                {
+                                    this.envido(p, true, id_turno);
+                                }
+                            }
+
+                            else
+                            {
+                                btn_envido.Enabled = false;
+                            }
+                            btn_truco.Enabled = true;
+                            while (!preguntar_t)
+                            {
+                                Application.DoEvents();
+                            }
+                            r = p.jugadores[id_turno + 1].preguntar_t(p.truco);
+                            if (r == "no")
+                            {
+                                p.quiso_truco = false;
+                                p.nosotros = p.nosotros + p.puntos_truco();
+                                p.ganador_primera = true;
+                                p.ganador_segunda = true;
+                                break;
+                            }
+                            if (r == "+1")
+                            {
+                                using (Form_truco form_truco = new Form_truco(partida))
+                                {
+                                    DialogResult resultado = form_truco.ShowDialog();
+                                    if (resultado == DialogResult.Cancel)
+                                    {
+                                        //no quiso
+                                        p.quiso_truco = false;
+                                        p.ellos = p.ellos + p.puntos_truco();
+                                        p.ganador_primera = true;
+                                        p.ganador_segunda = true;
+                                        break;
+                                    }
+                                    if (resultado == DialogResult.OK)
+                                    {
+                                        //otras opciones
+                                        p = form_truco.partida;
+                                        r = p.jugadores[id_turno + 1].preguntar_t(p.truco);
+                                        if (r == "no")
+                                        {
+                                            p.quiso_truco = false;
+                                            p.nosotros = p.nosotros + p.puntos_truco();
+                                            p.ganador_primera = true;
+                                            p.ganador_segunda = true;
+                                            break;
+                                        }
+                                    }
+                                }
+                            }
+                            r = "";
+
+                            while (!input)
+                            {
+                                Application.DoEvents();
+                            }
+                            p = partida;
+                            if (s == "mazo")
+                            {
+                                p.ellos = p.ellos + p.puntos_truco();
+                                p.ganador_primera = false;
+                                p.ganador_segunda = false;
+                                break;
+                            }
+
+                            c = p.str_a_carta(s);
+                            btn_truco.Enabled = false;
+                            input = false;
+                        }
+                        else
+                        {
+                            btn_envido.Enabled = false;
+                            //respuesta de bot
+                            if (p.vuelta == 1)
+                            {
+
+                                r = p.jugadores[id_turno].cantar_envido(p.valor_envido(p.jugadores[id_turno]));
+                                if (r != "no")
+                                {
+                                    p.guardar_respuesta(r);
+                                    this.envido(p, false, id_turno);
+                                }
+                            }
+                            else
+                            {
+                                r=p.jugadores[id_turno].cantar_truco();
+                                if(r == "si")
+                                {
+                                    p.truco = Enums.Truco.truco;
+                                    using (Form_truco form_truco = new Form_truco(partida))
+                                    {
+                                        DialogResult resultado = form_truco.ShowDialog();
+                                        if (resultado == DialogResult.Cancel)
+                                        {
+                                            //no quiso
+                                            p.quiso_truco = false;
+                                            p.ellos = p.ellos + p.puntos_truco();
+                                            p.ganador_primera = true;
+                                            p.ganador_segunda = true;
+                                            break;
+                                        }
+                                        if (resultado == DialogResult.OK)
+                                        {
+                                            //otras opciones
+                                            p = form_truco.partida;
+                                            r = p.jugadores[id_turno + 1].preguntar_t(p.truco);
+                                            if (r == "no")
+                                            {
+                                                p.quiso_truco = false;
+                                                p.nosotros = p.nosotros + p.puntos_truco();
+                                                p.ganador_primera = true;
+                                                p.ganador_segunda = true;
+                                                break;
+                                            }
+                                            else
+                                            {
+                                                using (Form_truco form_truco2 = new Form_truco(partida))
+                                                {
+                                                    DialogResult resultado2 = form_truco2.ShowDialog();
+                                                    if (resultado == DialogResult.Cancel)
+                                                    {
+                                                        //no quiso
+                                                        p.quiso_truco = false;
+                                                        p.ellos = p.ellos + p.puntos_truco();
+                                                        p.ganador_primera = true;
+                                                        p.ganador_segunda = true;
+                                                        break;
+                                                    }
+
+                                                }
+                                            }
+
+                                        }
+                                    }
+                                }
+
+                            }
+                            c = p.jugadores[id_turno].decidir_carta(p);
+                            r = "";
+                            if (s == "mazo") { break; }
+                        }
+                        lbl_nosotros.Text = $"Nosotros: {p.nosotros}";
+                        lbl_ellos.Text = $"Ellos: {p.ellos}";
+                        if (s == "mazo") { break; }
+                        s = null;
+                        c.id_jugador = id_turno;
+                        cargar_cartas_mesa(c, p, id_turno);
+                        p.cartas_en_mesa.Add(p.jugadores[id_turno].bajar_carta(c));
+                        if (p.nosotros >= p.puntos || p.ellos >= p.puntos) { break; }
+                        id_turno = (id_turno + 1) % p.jugadores.Count();
+
+
+                    }
+                    if (s == "mazo") { s = null; break; }
+                    if (p.cartas_en_mesa.Count == 0) { break; }
+                    if (p.nosotros >= p.puntos || p.ellos >= p.puntos) { break; }
+                    id_turno = p.ganador_carta();
+                    if (p.vuelta == 1)
+                    {
+                        p.ganador_primera = p.jugadores[p.ganador_carta()].equipo;
+                    }
+                    if (p.vuelta == 2)
+                    {
+                        p.ganador_segunda = p.jugadores[p.ganador_carta()].equipo;
+                    }
+                    if (p.vuelta == 3)
+                    {
+                        p.ganador_tercera = p.jugadores[p.ganador_carta()].equipo;
+                    }
+                    p.cartas_en_mesa.Clear();
+                    p.vuelta++;
+                }
+                preguntar_e = false;
+                p.id_mano = (p.id_mano + 1) % p.jugadores.Count();
+                if (p.quiso_truco != false)
+                {
+                    if (p.ganador_ronda() == true)
+                    {
+                        p.nosotros = p.nosotros + p.puntos_truco();
+                    }
+                    else
+                    {
+                        if (p.ganador_ronda() != null)
+                        {
+                            p.ellos = p.ellos + p.puntos_truco();
+                        }
+                    }
+                }
+                p.cartas_en_mesa.Clear();
+                if (p.nosotros >= p.puntos || p.ellos >= p.puntos) { break; }
+            }
+        }
+        public Form_juego(modelos.Partida Partida)
+        {
+            InitializeComponent();
+            this.Shown += Form_juego_Shown;
+            this.partida = Partida;
+            if (partida.cant_jugadores == 2)
+            {
+                pcb_bot2_0.Visible = false;
+                pcb_bot2_1.Visible = false;
+                pcb_bot2_2.Visible = false;
+                pcb_bot3_0.Visible = false;
+                pcb_bot3_1.Visible = false;
+                pcb_bot3_2.Visible = false;
+                pcb_bot4_0.Visible = false;
+                pcb_bot4_1.Visible = false;
+                pcb_bot4_2.Visible = false;
+                pcb_bot5_0.Visible = false;
+                pcb_bot5_1.Visible = false;
+                pcb_bot5_2.Visible = false;
+                lbl_jugador.Text = partida.jugadores[0].nombre;
+                lbl_bot1.Text = partida.jugadores[1].nombre;
+                lbl_bot2.Visible = false;
+                lbl_bot3.Visible = false;
+                lbl_bot4.Visible = false;
+                lbl_bot5.Visible = false;
+            }
+            if (partida.cant_jugadores == 4)
+            {
+                pcb_bot4_0.Visible = false;
+                pcb_bot4_1.Visible = false;
+                pcb_bot4_2.Visible = false;
+                pcb_bot5_0.Visible = false;
+                pcb_bot5_1.Visible = false;
+                pcb_bot5_2.Visible = false;
+                pcb_bot2_0.Top = 230;
+                pcb_bot2_1.Top = 363;
+                pcb_bot2_2.Top = 500;
+                pcb_bot3_0.Top = 230;
+                pcb_bot3_1.Top = 363;
+                pcb_bot3_2.Top = 500;
+                lbl_bot2.Top = 400;
+                lbl_bot3.Top = 400;
+                lbl_jugador.Text = partida.jugadores[0].nombre;
+                lbl_bot2.Text = partida.jugadores[1].nombre;
+                lbl_bot1.Text = partida.jugadores[2].nombre;
+                lbl_bot3.Text = partida.jugadores[3].nombre;
+                lbl_bot4.Visible = false;
+                lbl_bot5.Visible = false;
+            }
+            if (partida.cant_jugadores == 6)
+            {
+                lbl_jugador.Text = partida.jugadores[0].nombre;
+                lbl_bot4.Text = partida.jugadores[1].nombre;
+                lbl_bot2.Text = partida.jugadores[2].nombre;
+                lbl_bot1.Text = partida.jugadores[3].nombre;
+                lbl_bot3.Text = partida.jugadores[4].nombre;
+                lbl_bot5.Text = partida.jugadores[5].nombre;
+            }
+        }
+
+        private void Form_juego_Shown(object sender, EventArgs e)
+        {
+            this.loop_juego(this.partida);
+        }
+
+        private void Form_juego_Load(object sender, EventArgs e)
+        {
+
+        }
+        private void Form_juego_FormClosing(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void btn_envido_Click(object sender, EventArgs e)
+        {
+            preguntar_e = true;
+            using (Form_envido form_envido = new Form_envido(true, partida))
+            {
+                DialogResult resultado = form_envido.ShowDialog();
+                if (resultado == DialogResult.Yes)
+                {
+                    //quiso
+                }
+                if (resultado == DialogResult.Cancel)
+                {
+                    //no quiso
+                }
+                if (resultado == DialogResult.OK)
+                {
+                    //otras opciones
+                    this.partida = form_envido.partida;
+                }
+            }
+        }
+
+        private void btn_truco_Click(object sender, EventArgs e)
+        {
+            preguntar_e = true;
+            preguntar_t = true;
+            using (Form_truco form_truco = new Form_truco(partida))
+            {
+                DialogResult resultado = form_truco.ShowDialog();
+                if (resultado == DialogResult.Cancel)
+                {
+                    //no quiso
+
+                }
+                if (resultado == DialogResult.Yes)
+                {
+                    //quiso
+                }
+                if (resultado == DialogResult.OK)
+                {
+                    //otras opciones
+                    this.partida = form_truco.partida;
+                }
+            }
+        }
+
+        private void pictureBox4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_mazo_Click(object sender, EventArgs e)
+        {
+            preguntar_e = true;
+            preguntar_t = true;
+            input = true;
+            DialogResult mazo = MessageBox.Show("¿Seguro que querés ir al mazo?", "Ir al mazo", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (mazo == DialogResult.Yes) 
+            {
+                s = "mazo"; 
+            }
+        }
+
+        private void pcb_0_Click(object sender, EventArgs e)
+        {
+
+
+            jugar_carta(pcb_0);
+        
+
+}
+
+        private void pcb_1_Click(object sender, EventArgs e)
+        {
+            jugar_carta(pcb_1);
+        }
+
+        private void pcb_2_Click(object sender, EventArgs e)
+        {
+            jugar_carta(pcb_2);
+        }
+    }
+}

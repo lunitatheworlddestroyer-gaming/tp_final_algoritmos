@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.lbl_modo = new System.Windows.Forms.Label();
             this.btn_quiero = new System.Windows.Forms.Button();
             this.btn_no_quiero = new System.Windows.Forms.Button();
@@ -36,6 +37,7 @@
             this.btn_falta_envido = new System.Windows.Forms.Button();
             this.btn_cancelar = new System.Windows.Forms.Button();
             this.btn_flor = new System.Windows.Forms.Button();
+            this.ttip_truco = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // lbl_modo
@@ -119,6 +121,10 @@
             this.btn_flor.Text = "Cantar Flor";
             this.btn_flor.UseVisualStyleBackColor = true;
             // 
+            // ttip_truco
+            // 
+            this.ttip_truco.Popup += new System.Windows.Forms.PopupEventHandler(this.ttip_truco_Popup);
+            // 
             // Form_envido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -149,5 +155,6 @@
         private System.Windows.Forms.Button btn_falta_envido;
         private System.Windows.Forms.Button btn_cancelar;
         private System.Windows.Forms.Button btn_flor;
+        private System.Windows.Forms.ToolTip ttip_truco;
     }
 }

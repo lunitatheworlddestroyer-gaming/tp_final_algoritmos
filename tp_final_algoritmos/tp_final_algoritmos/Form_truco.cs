@@ -39,7 +39,11 @@ namespace tp_final_algoritmos
                     btn_subir.Text = "Quiero vale 4";
                     btn_subir.Enabled = false;
                     break;
-            }    
+            }   
+            if (partida.truco == Truco.truco && partida.vuelta == 1)
+            {
+                btn_envido.Visible = true;
+            }
         }
 
         private void Form_truco_Load(object sender, EventArgs e)
@@ -61,6 +65,18 @@ namespace tp_final_algoritmos
 
         private void btn_no_quiero_Click(object sender, EventArgs e)
         {
+            if (partida.truco == Truco.truco)
+            {
+                partida.truco = Truco.no;
+            }
+            if (partida.truco == Truco.retruco)
+            {
+                partida.truco = Truco.truco;
+            }
+            if (partida.truco == Truco.vale_4)
+            {
+                partida.truco = Truco.retruco;
+            }
             this.DialogResult = DialogResult.Cancel;
             this.Close();
         }
@@ -77,6 +93,16 @@ namespace tp_final_algoritmos
             }
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void btn_envido_Click(object sender, EventArgs e)
+        {
+            using (Form_envido form_envido = new Form_envido(true, partida))
+            {
+                form_envido.ShowDialog();
+            }
+            partida.truco = Truco.no;
+            this.DialogResult = DialogResult.OK;
         }
     }
 }

@@ -59,6 +59,14 @@
             this.lbl_bot3 = new System.Windows.Forms.Label();
             this.lbl_bot5 = new System.Windows.Forms.Label();
             this.ttip_cartas = new System.Windows.Forms.ToolTip(this.components);
+            this.pcb_j0_0 = new System.Windows.Forms.PictureBox();
+            this.pcb_j1_0 = new System.Windows.Forms.PictureBox();
+            this.pcb_j1_1 = new System.Windows.Forms.PictureBox();
+            this.pcb_j0_1 = new System.Windows.Forms.PictureBox();
+            this.pcb_j1_2 = new System.Windows.Forms.PictureBox();
+            this.pcb_j0_2 = new System.Windows.Forms.PictureBox();
+            this.lbl_nosotros = new System.Windows.Forms.Label();
+            this.lbl_ellos = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_bot4_0)).BeginInit();
@@ -77,6 +85,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcb_2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j0_0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j1_0)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j1_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j0_1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j1_2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j0_2)).BeginInit();
             this.SuspendLayout();
             // 
             // btn_envido
@@ -279,6 +293,7 @@
             this.pcb_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_2.TabIndex = 6;
             this.pcb_2.TabStop = false;
+            this.pcb_2.Click += new System.EventHandler(this.pcb_2_Click);
             // 
             // pcb_1
             // 
@@ -290,6 +305,7 @@
             this.pcb_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcb_1.TabIndex = 5;
             this.pcb_1.TabStop = false;
+            this.pcb_1.Click += new System.EventHandler(this.pcb_1_Click);
             // 
             // pcb_0
             // 
@@ -302,6 +318,7 @@
             this.pcb_0.TabIndex = 4;
             this.pcb_0.TabStop = false;
             this.pcb_0.UseWaitCursor = true;
+            this.pcb_0.Click += new System.EventHandler(this.pcb_0_Click);
             // 
             // lbl_jugador
             // 
@@ -358,12 +375,118 @@
             this.lbl_bot5.TabIndex = 27;
             this.lbl_bot5.Text = "Bot 5";
             // 
+            // pcb_j0_0
+            // 
+            this.pcb_j0_0.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_j0_0.ErrorImage")));
+            this.pcb_j0_0.Image = ((System.Drawing.Image)(resources.GetObject("pcb_j0_0.Image")));
+            this.pcb_j0_0.Location = new System.Drawing.Point(289, 384);
+            this.pcb_j0_0.Name = "pcb_j0_0";
+            this.pcb_j0_0.Size = new System.Drawing.Size(146, 209);
+            this.pcb_j0_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_j0_0.TabIndex = 28;
+            this.pcb_j0_0.TabStop = false;
+            this.pcb_j0_0.UseWaitCursor = true;
+            this.pcb_j0_0.Visible = false;
+            // 
+            // pcb_j1_0
+            // 
+            this.pcb_j1_0.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_j1_0.ErrorImage")));
+            this.pcb_j1_0.Image = ((System.Drawing.Image)(resources.GetObject("pcb_j1_0.Image")));
+            this.pcb_j1_0.Location = new System.Drawing.Point(330, 215);
+            this.pcb_j1_0.Name = "pcb_j1_0";
+            this.pcb_j1_0.Size = new System.Drawing.Size(146, 209);
+            this.pcb_j1_0.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_j1_0.TabIndex = 29;
+            this.pcb_j1_0.TabStop = false;
+            this.pcb_j1_0.UseWaitCursor = true;
+            this.pcb_j1_0.Visible = false;
+            // 
+            // pcb_j1_1
+            // 
+            this.pcb_j1_1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_j1_1.ErrorImage")));
+            this.pcb_j1_1.Image = ((System.Drawing.Image)(resources.GetObject("pcb_j1_1.Image")));
+            this.pcb_j1_1.Location = new System.Drawing.Point(514, 215);
+            this.pcb_j1_1.Name = "pcb_j1_1";
+            this.pcb_j1_1.Size = new System.Drawing.Size(146, 209);
+            this.pcb_j1_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_j1_1.TabIndex = 30;
+            this.pcb_j1_1.TabStop = false;
+            this.pcb_j1_1.UseWaitCursor = true;
+            this.pcb_j1_1.Visible = false;
+            // 
+            // pcb_j0_1
+            // 
+            this.pcb_j0_1.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_j0_1.ErrorImage")));
+            this.pcb_j0_1.Image = ((System.Drawing.Image)(resources.GetObject("pcb_j0_1.Image")));
+            this.pcb_j0_1.Location = new System.Drawing.Point(462, 384);
+            this.pcb_j0_1.Name = "pcb_j0_1";
+            this.pcb_j0_1.Size = new System.Drawing.Size(146, 209);
+            this.pcb_j0_1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_j0_1.TabIndex = 31;
+            this.pcb_j0_1.TabStop = false;
+            this.pcb_j0_1.UseWaitCursor = true;
+            this.pcb_j0_1.Visible = false;
+            // 
+            // pcb_j1_2
+            // 
+            this.pcb_j1_2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_j1_2.ErrorImage")));
+            this.pcb_j1_2.Image = ((System.Drawing.Image)(resources.GetObject("pcb_j1_2.Image")));
+            this.pcb_j1_2.Location = new System.Drawing.Point(700, 215);
+            this.pcb_j1_2.Name = "pcb_j1_2";
+            this.pcb_j1_2.Size = new System.Drawing.Size(146, 209);
+            this.pcb_j1_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_j1_2.TabIndex = 32;
+            this.pcb_j1_2.TabStop = false;
+            this.pcb_j1_2.UseWaitCursor = true;
+            this.pcb_j1_2.Visible = false;
+            // 
+            // pcb_j0_2
+            // 
+            this.pcb_j0_2.ErrorImage = ((System.Drawing.Image)(resources.GetObject("pcb_j0_2.ErrorImage")));
+            this.pcb_j0_2.Image = ((System.Drawing.Image)(resources.GetObject("pcb_j0_2.Image")));
+            this.pcb_j0_2.Location = new System.Drawing.Point(643, 384);
+            this.pcb_j0_2.Name = "pcb_j0_2";
+            this.pcb_j0_2.Size = new System.Drawing.Size(146, 209);
+            this.pcb_j0_2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pcb_j0_2.TabIndex = 33;
+            this.pcb_j0_2.TabStop = false;
+            this.pcb_j0_2.UseWaitCursor = true;
+            this.pcb_j0_2.Visible = false;
+            // 
+            // lbl_nosotros
+            // 
+            this.lbl_nosotros.AutoSize = true;
+            this.lbl_nosotros.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_nosotros.Location = new System.Drawing.Point(30, 24);
+            this.lbl_nosotros.Name = "lbl_nosotros";
+            this.lbl_nosotros.Size = new System.Drawing.Size(136, 29);
+            this.lbl_nosotros.TabIndex = 34;
+            this.lbl_nosotros.Text = "Nosotros: 0";
+            // 
+            // lbl_ellos
+            // 
+            this.lbl_ellos.AutoSize = true;
+            this.lbl_ellos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbl_ellos.Location = new System.Drawing.Point(30, 87);
+            this.lbl_ellos.Name = "lbl_ellos";
+            this.lbl_ellos.Size = new System.Drawing.Size(92, 29);
+            this.lbl_ellos.TabIndex = 35;
+            this.lbl_ellos.Text = "Ellos: 0";
+            // 
             // Form_juego
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1134, 852);
+            this.Controls.Add(this.lbl_ellos);
+            this.Controls.Add(this.lbl_nosotros);
+            this.Controls.Add(this.pcb_j0_2);
+            this.Controls.Add(this.pcb_j1_2);
+            this.Controls.Add(this.pcb_j0_1);
+            this.Controls.Add(this.pcb_j1_1);
+            this.Controls.Add(this.pcb_j1_0);
+            this.Controls.Add(this.pcb_j0_0);
             this.Controls.Add(this.lbl_bot5);
             this.Controls.Add(this.lbl_bot3);
             this.Controls.Add(this.lbl_bot1);
@@ -413,6 +536,12 @@
             ((System.ComponentModel.ISupportInitialize)(this.pcb_2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pcb_0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j0_0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j1_0)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j1_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j0_1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j1_2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pcb_j0_2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -449,5 +578,13 @@
         private System.Windows.Forms.Label lbl_bot3;
         private System.Windows.Forms.Label lbl_bot5;
         private System.Windows.Forms.ToolTip ttip_cartas;
+        private System.Windows.Forms.PictureBox pcb_j0_0;
+        private System.Windows.Forms.PictureBox pcb_j1_0;
+        private System.Windows.Forms.PictureBox pcb_j1_1;
+        private System.Windows.Forms.PictureBox pcb_j0_1;
+        private System.Windows.Forms.PictureBox pcb_j1_2;
+        private System.Windows.Forms.PictureBox pcb_j0_2;
+        private System.Windows.Forms.Label lbl_nosotros;
+        private System.Windows.Forms.Label lbl_ellos;
     }
 }
