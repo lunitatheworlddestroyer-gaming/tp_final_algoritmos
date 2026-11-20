@@ -98,6 +98,29 @@ namespace tp_final_algoritmos
 
                 }
             }
+
+            if (incluye_falta_envido(this.envido))
+            {
+                btn_envido.Enabled = false;
+                btn_real_envido.Enabled = false;
+                btn_falta_envido.Enabled = false;
+            }
+        }
+
+        private bool incluye_falta_envido(Envido apuesta)
+        {
+            switch (apuesta)
+            {
+                case Envido.falta_envido:
+                case Envido.envido_falta_envido:
+                case Envido.envido_envido_falta_envido:
+                case Envido.real_envido_falta_envido:
+                case Envido.envido_real_envido_falta_envido:
+                case Envido.envido_envido_real_envido_falta_envido:
+                    return true;
+                default:
+                    return false;
+            }
         }
 
         private void btn_envido_Click(object sender, EventArgs e)
@@ -191,6 +214,11 @@ namespace tp_final_algoritmos
             {
                 ttip_truco.SetToolTip(btn_cancelar, "Ya lo cantaste, no se puede cancelar");
             }
+        }
+
+        private void Form_envido_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

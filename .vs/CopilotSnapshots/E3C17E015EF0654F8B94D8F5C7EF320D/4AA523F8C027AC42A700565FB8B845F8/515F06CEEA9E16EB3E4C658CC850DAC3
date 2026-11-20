@@ -1,0 +1,327 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Diagnostics.Eventing.Reader;
+using System.Linq;
+using System.Text;
+using System.Threading;
+using System.Threading.Tasks;
+
+namespace tp_final_algoritmos.modelos
+{
+    public class Jugador_bot : Jugador
+    {
+        public int t;
+        public Jugador_bot(string n, bool e, int i)
+            : base()
+        {
+            this.nombre = n;
+            this.equipo = e;
+            this.id = i;
+        }
+        public override void mirar_mano()
+        {
+            this.t = 0;
+            foreach(Carta c in mano)
+            {
+                this.t = this.t + c.valor_truco;
+            }
+        }
+        public override string preguntar_e(Enums.Envido e, int i) 
+        {
+            Random r = new Random();
+            int a = r.Next(0,3);
+            switch (e)
+            {
+                case Enums.Envido.envido:
+                    if (i > 31) 
+                    { 
+                        if (a == 2) { return "envido_falta_envido"; }
+                        else
+                        {
+                            if(a == 1) { return "envido_real_envido"; }
+                            else { return "envido_envido"; }
+                        }
+                    }
+                    else 
+                    {
+                        if (i > 28)
+                        {
+                            if (a == 2) { return "envido_real_envido"; }
+                            else
+                            {
+                                if (a == 1) { return "envido_envido"; }
+                                else { return "si"; }
+                            }
+                        }
+                        else
+                        {
+                            if (i > 23)
+                            {
+                                if (a > 0) { return "si"; }
+                                else { return "no"; }
+                            }
+                            else
+                            {
+                                if (a == 0) { return "envido_real_envido"; }
+                                else { return "no"; }
+                            }
+                        }
+                    }
+
+                case Enums.Envido.envido_envido:
+                    if (i > 31)
+                    {
+                        if (a == 0) { return "envido_envido_falta_envido"; }
+                        else { return "envido_envido_real_envido"; }
+                    }
+                    else
+                    {
+                        if(i > 28)
+                        {
+                            if (a == 2) { return "envido_envido_real_envido"; }
+                            else { return "si"; }
+                        }
+                        else
+                        {
+                            if (a == 0) { return "envido_envido_real_envido"; }
+                            else { return "no"; }
+                        }
+                    }
+                case Enums.Envido.envido_envido_real_envido:
+                    if (i > 31)
+                    {
+                        if (a > 0) { return "envido_envido_real_envido_falta_envido"; }
+                        else { return "si"; }
+                    }
+                    else
+                    {
+                        if (i > 27)
+                        {
+                            if (a == 0) { return "no"; }
+                            else { return "si"; }
+                        }
+                        else { return "no"; }
+                    }
+                case Enums.Envido.real_envido:
+                    if (i > 31)
+                    {
+                        if (a > 0) { return "real_envido_falta_envido"; }
+                        else { return "si"; }
+                    }
+                    else
+                    {
+                        if (i > 27)
+                        {
+                            if (a == 0) { return "no"; }
+                            else { return "si"; }
+                        }
+                        else { return "no"; }
+                    }
+                case Enums.Envido.envido_real_envido:
+                    if (i > 31)
+                    {
+                        if (a > 0) { return "envido_real_envido_falta_envido"; }
+                        else { return "si"; }
+                    }
+                    else
+                    {
+                        if (i > 27) {return "si";}
+                        else { return "no"; }
+                    }
+                case Enums.Envido.envido_falta_envido:
+                case Enums.Envido.envido_envido_falta_envido:
+                case Enums.Envido.envido_envido_real_envido_falta_envido:
+                case Enums.Envido.envido_real_envido_falta_envido:
+                case Enums.Envido.falta_envido:
+                case Enums.Envido.real_envido_falta_envido:
+                    if (i > 30)
+                    {
+                        if (a == 0) { return "no"; }
+                        else { return "si"; }
+                    }
+                    else { return "no"; }
+                default:
+                    return "no";
+            }
+        }
+        public override string preguntar_t(Enums.Truco tr)
+        {
+            Random r = new Random();
+            int a = r.Next(0, 3);
+            switch (tr)
+            {
+                case Enums.Truco.truco:
+                    if (this.t > 24) { return "+1"; }
+                    else
+                    {
+                        if (this.t > 12)
+                        {
+                            if (a == 2)
+                            {
+                                return "+1";
+                            }
+                            else
+                            {
+                                if (a == 1)
+                                {
+                                    return "si";
+                                }
+                                else
+                                {
+                                    return "no";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (a == 1) { return "+1"; }
+                            else { return "no"; }
+                        }
+                    }
+                case Enums.Truco.retruco:
+                    if (this.t > 32) { return "+1"; }
+                    else
+                    {
+                        if (this.t > 15)
+                        {
+                            if (a == 2)
+                            {
+                                return "+1";
+                            }
+                            else
+                            {
+                                if (a == 1)
+                                {
+                                    return "si";
+                                }
+                                else
+                                {
+                                    return "no";
+                                }
+                            }
+                        }
+                        else
+                        {
+                            if (this.t < 4)
+                            {
+                                if (a == 1) { return "+1"; }
+                                else { return "no"; }
+                            }
+                            else { return "no"; }
+                        }
+                    }
+                case Enums.Truco.vale_4:
+                    if (this.t > 32) { return "si"; }
+                    else
+                    {
+                        if (this.t > 26) 
+                        { 
+                            if (a != 0) { return "si"; }
+                            else { return "no"; }
+                        }
+                        else { return "no"; }
+                    }
+                default: return "no";
+            }
+        }
+        public override string cantar_truco() 
+        {
+            Random r = new Random();
+            int a = r.Next(0, 3);
+            if (this.t > 23)
+            {
+                if (a == 0) { return "no"; }
+                else { return "si"; }
+            }
+            else
+            {
+                if (a == 0) { return "si"; }
+                else { return "no"; }
+            }
+        }
+        public override string cantar_envido(int i) 
+        {
+            Random r = new Random();
+            int a = r.Next(0, 3);
+            if (i > 30)
+            {
+                if(a == 0)
+                {
+                    return "falta_envido";
+                }
+                else
+                {
+                    return "real_envido";
+                }
+            }
+            else
+            {
+                if (i > 26)
+                {
+                    if (a == 0) { return "real_envido"; } 
+                    else { return "envido"; }
+                }
+                else
+                {
+                    if (i == 0)
+                    {
+                        if (a == 0) { return "real_envido"; }
+                        else { return "no"; }
+                    }
+                    else 
+                    {
+                        if (i > 20)
+                        {
+                            if (a == 0) { return "no"; }
+                            else { return "envido"; }
+                        }
+                        else
+                        {
+                            if (a == 0) { return "envido"; }
+                            else { return "no"; }
+                        }
+                    }
+                }
+                
+            }
+
+        }
+        public override Carta decidir_carta(Partida p)
+        {
+            if (this.mano.Count == 0)
+            {
+                return null;
+            }
+
+            Random r = new Random();
+            int a = r.Next(0, this.mano.Count);
+            if (p.vuelta == 1)
+            {
+                return this.bajar_carta(this.mano[a]);
+            }
+
+            if (p.vuelta == 2)
+            {
+                if (p.ganador_primera == true)
+                {
+                    int indice = a == 1 ? 0 : Math.Min(1, this.mano.Count - 1);
+                    return this.bajar_carta(this.mano[indice]);
+                }
+
+                if (this.mano.Count == 1)
+                {
+                    return this.bajar_carta(this.mano[0]);
+                }
+
+                if (this.mano[0].valor_truco >= this.mano[1].valor_truco)
+                {
+                    return this.bajar_carta(this.mano[0]);
+                }
+
+                return this.bajar_carta(this.mano[1]);
+            }
+
+            return this.bajar_carta(this.mano[0]);
+        }
+    }
+}
