@@ -1,0 +1,8 @@
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.csproj.AssemblyReference.cache
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.Form1.resources
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.Form_envido.resources
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.Form_juego.resources
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.Form_modo.resources
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.Form_truco.resources
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.Properties.Resources.resources
+C:\Users\yo.DESKTOP-1KTLJBB\Documents\GitHub\tp_final_algoritmos\tp_final_algoritmos\tp_final_algoritmos\obj\Release\tp_final_algoritmos.csproj.GenerateResource.cache

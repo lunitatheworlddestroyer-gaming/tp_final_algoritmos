@@ -1,6 +1,7 @@
-ï»¿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using tp_final_algoritmos.Enums;
@@ -31,13 +32,15 @@ namespace tp_final_algoritmos.modelos
         public Envido envido;
         public Truco truco;
         public bool envido_cantado;
-
+        public bool? quiso_envido;
+        public bool? quiso_truco;
         public Partida(int c, int Puntos, Modo_partida modo, Jugador_humano player)
         {
+            Random r = new Random();
             this.cant_jugadores = c;
             this.nosotros = 0;
             this.ellos = 0;
-            this.id_mano = 0;
+            this.id_mano = r.Next(0, c);
             this.puntos = Puntos;
             this.modo_partida = modo;
             this.jugadores = new List<Jugador>();
@@ -57,23 +60,11 @@ namespace tp_final_algoritmos.modelos
             this.envido = Envido.no;
             this.truco = Truco.no;
             this.envido_cantado = false;
-        }
-        public void repartir()
-        {
-            // llamar al evento que trae las cartas de la bdd y las pone en p.cartas_jugadas
-            foreach (Carta c in this.cartas_jugadas)
-            {
-                foreach (Jugador j in this.jugadores)
-                {
-                    if (c.id_jugador == j.id)
-                    {
-                        j.mano.Add(c);
-                    }
-                }
-            }
+            this.quiso_envido = null;
+            this.quiso_truco = null;
         }
 
-        public void nueva_ronda()
+        public void nueva_ronda(int i)
         {
             this.cartas_jugadas.Clear();
             this.cartas_en_mesa.Clear();
@@ -89,65 +80,35 @@ namespace tp_final_algoritmos.modelos
             this.mazo = Mazo;
             this.mazo.mezclar_mazo();
             this.mazo.repartir_cartas(this.jugadores);
+            foreach (Jugador j in this.jugadores)
+            {
+                j.mirar_mano();
+            }
             this.envido = Envido.no;
             this.truco = Truco.no;
             this.envido_cantado = false;
+            id_mano = i;
+            this.quiso_envido = null;
+            this.quiso_truco = null;
         }
         public int valor_envido(Jugador j)
         {
-            //si hay flor toma los mas grandes y los devuelve
-            if (j.mano[0].palo == j.mano[1].palo && j.mano[0].palo == j.mano[2].palo)
-            {
-                if (j.mano[0].valor_envido > j.mano[2].valor_envido && j.mano[1].valor_envido > j.mano[2].valor_envido)
-                {
-                    return j.mano[0].valor_envido + j.mano[1].valor_envido;
-                }
-                if (j.mano[0].valor_envido > j.mano[1].valor_envido && j.mano[2].valor_envido > j.mano[1].valor_envido)
-                {
-                    return j.mano[0].valor_envido + j.mano[2].valor_envido;
-                }
-                if (j.mano[1].valor_envido > j.mano[0].valor_envido && j.mano[2].valor_envido > j.mano[0].valor_envido)
-                {
-                    return j.mano[2].valor_envido + j.mano[1].valor_envido;
-                }
-            }
-            // con 2 cartas
-            if (j.mano[0].palo == j.mano[1].palo)
-            {
-                return j.mano[0].valor_envido + j.mano[1].valor_envido;
-            }
-            if (j.mano[0].palo == j.mano[2].palo)
-            {
-                return j.mano[0].valor_envido + j.mano[2].valor_envido;
-            }
-            if (j.mano[1].palo == j.mano[2].palo)
-            {
-                return j.mano[2].valor_envido + j.mano[1].valor_envido;
-            }
-            //si no tiene cartas iguales
-            if (j.mano[0].valor_envido >= j.mano[1].valor_envido)
-            {
-                if (j.mano[0].valor_envido >= j.mano[2].valor_envido)
-                {
-                    return j.mano[0].valor_envido;
-                }
-                else
-                {
-                    return j.mano[2].valor_envido;
-                }
+            List<Carta> cartas = new List<Carta>(j.mano);
+            cartas.AddRange(this.cartas_en_mesa.Where(c => c.id_jugador == j.id));
 
-            }
-            else
+            if (cartas.Count != 3)
             {
-                if (j.mano[1].valor_envido >= j.mano[2].valor_envido)
-                {
-                    return j.mano[1].valor_envido;
-                }
-                else
-                {
-                    return j.mano[2].valor_envido;
-                }
+                throw new InvalidOperationException("El cálculo del envido requiere las tres cartas de la mano.");
             }
+
+            if (cartas.All(c => c.palo == cartas[0].palo))
+            {
+                return cartas.OrderByDescending(c => c.valor_envido)
+                    .Take(2)
+                    .Sum(c => c.valor_envido);
+            }
+
+            return cartas.Max(c => c.valor_envido);
         }
         public bool ganador_envido()
         {
@@ -161,11 +122,11 @@ namespace tp_final_algoritmos.modelos
             }
             return j.equipo;
         }
-        public int puntos_envido(bool quiero, Envido e, bool ganador)
+        public int puntos_envido(bool ganador)
         {
-            if (quiero)
+            if (this.quiso_envido == true)
             {
-                switch (e)
+                switch (this.envido)
                 {
                     case Envido.no:
                         return 0;
@@ -200,7 +161,7 @@ namespace tp_final_algoritmos.modelos
             }
             else
             {
-                switch (e)
+                switch (this.envido)
                 {
                     case Envido.no:
                         return 0;
@@ -226,14 +187,14 @@ namespace tp_final_algoritmos.modelos
                         return 2;
                     case Envido.envido_envido_real_envido_falta_envido:
                         return 4;
-                    default: 
+                    default:
                         return 0;
                 }
             }
         }
-        public int puntos_truco(Truco t)
+        public int puntos_truco()
         {
-            switch (t)
+            switch (this.truco)
             {
                 case Truco.no:
                     return 1;
@@ -250,7 +211,7 @@ namespace tp_final_algoritmos.modelos
         }
         public int ganador_carta()
         {
-            Carta ganadora = this.cartas_en_mesa[this.id_mano];
+            Carta ganadora = this.cartas_en_mesa[0];
             foreach (Carta c in this.cartas_en_mesa)
             {
                 if (c.valor_truco > ganadora.valor_truco)
@@ -262,60 +223,74 @@ namespace tp_final_algoritmos.modelos
         }
         public bool? ganador_ronda()
         {
-            if (this.vuelta == 2)
+            if (this.ganador_primera == null || this.ganador_segunda == null)
             {
-                //para la segunda
-                if (this.ganador_primera == true)
-                {
-                    if (this.ganador_segunda == true || this.ganador_segunda == null)
-                    {
-                        // ganamos nosotros
-                        return true;
-                    }
-                    if (this.ganador_segunda == false)
-                    {
-                        return null;
-                    }
-                }
-                if (this.ganador_primera == false)
-                {
-                    if (this.ganador_segunda == false || this.ganador_segunda == null)
-                    {
-                        //ganan ellos
-                        return true;
-                    }
-                    if (this.ganador_segunda == true)
-                    {
-                        return null;
-                    }
-                }
-                if (this.ganador_primera == null)
-                {
-                    if (this.ganador_segunda == true)
-                    {
-                        return true;
-                    }
-                    if (this.ganador_segunda == false)
-                    {
-                        return false;
-                    }
-                }
                 return null;
             }
-            if (this.vuelta == 3)
-            {
 
-                if (this.ganador_tercera != null)
+            if (this.ganador_primera == this.ganador_segunda)
+            {
+                return this.ganador_primera;
+            }
+
+            return this.ganador_tercera;
+        }
+
+        public Carta str_a_carta(string s)
+        {
+            foreach (Jugador j in this.jugadores)
+            {
+                foreach (Carta c in j.mano)
                 {
-                    return this.ganador_tercera;
-                }
-                else
-                {
-                    return this.jugadores[this.id_mano].equipo;
+                    if (c.ToString() == s)
+                    {
+                        return c;
+                    }
                 }
             }
             return null;
         }
-
+    
+        public void guardar_respuesta(string r)
+        {
+            switch (r)
+            {
+                case "envido":
+                    this.envido = Enums.Envido.envido;
+                    break;
+                case "envido_envido":
+                    this.envido = Enums.Envido.envido_envido;
+                    break;
+                case "envido_envido_falta_envido":
+                    this.envido = Enums.Envido.envido_envido_falta_envido;
+                    break;
+                case "envido_envido_real_envido":
+                    this.envido = Enums.Envido.envido_envido_real_envido;
+                    break;
+                case "envido_envido_real_envido_falta_envido":
+                    this.envido = Enums.Envido.envido_envido_real_envido_falta_envido;
+                    break;
+                case "envido_falta_envido":
+                    this.envido = Enums.Envido.envido_falta_envido;
+                    break;
+                case "envido_real_envido":
+                    this.envido = Enums.Envido.envido_real_envido;
+                    break;
+                case "envido_real_envido_falta_envido":
+                    this.envido = Enums.Envido.envido_real_envido_falta_envido;
+                    break;
+                case "falta_envido":
+                    this.envido = Enums.Envido.falta_envido;
+                    break;
+                case "real_envido":
+                    this.envido = Enums.Envido.real_envido;
+                    break;
+                case "real_envido_falta_envido":
+                    this.envido = Enums.Envido.real_envido_falta_envido;
+                    break;
+                default:
+                    break;
+            }
+        }
     }
 }

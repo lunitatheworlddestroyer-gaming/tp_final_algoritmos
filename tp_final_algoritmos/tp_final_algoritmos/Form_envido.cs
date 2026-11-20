@@ -22,12 +22,21 @@ namespace tp_final_algoritmos
                 btn_quiero.Enabled = false;
                 btn_no_quiero.Enabled = false;
                 lbl_modo.Text = "¿Que tipo de envido vas a cantar?";
+                if(partida.truco == Truco.truco)
+                {
+                    btn_cancelar.Enabled = false;
+                }
             }
             else
             {
                 btn_cancelar.Enabled = false;
                 switch (this.envido)
                 {
+                    case Envido.envido:
+                        this.Text = "Envido";
+                        lbl_modo.Text = "Te cantaron envido";
+                        break;
+
                     case Envido.envido_envido:
                         this.Text = "Envido envido";
                         btn_envido.Enabled = false;
@@ -174,6 +183,14 @@ namespace tp_final_algoritmos
             }
             this.DialogResult = DialogResult.OK;
             this.Close();
+        }
+
+        private void ttip_truco_Popup(object sender, PopupEventArgs e)
+        {
+            if (partida.truco == Truco.truco)
+            {
+                ttip_truco.SetToolTip(btn_cancelar, "Ya lo cantaste, no se puede cancelar");
+            }
         }
     }
 }

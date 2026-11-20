@@ -32,6 +32,7 @@
             this.btn_quiero = new System.Windows.Forms.Button();
             this.btn_no_quiero = new System.Windows.Forms.Button();
             this.btn_subir = new System.Windows.Forms.Button();
+            this.btn_envido = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lbl_truco
@@ -74,11 +75,23 @@
             this.btn_subir.UseVisualStyleBackColor = true;
             this.btn_subir.Click += new System.EventHandler(this.btn_subir_Click);
             // 
+            // btn_envido
+            // 
+            this.btn_envido.Location = new System.Drawing.Point(24, 181);
+            this.btn_envido.Name = "btn_envido";
+            this.btn_envido.Size = new System.Drawing.Size(525, 42);
+            this.btn_envido.TabIndex = 4;
+            this.btn_envido.Text = "Primero se dice envido";
+            this.btn_envido.UseVisualStyleBackColor = true;
+            this.btn_envido.Visible = false;
+            this.btn_envido.Click += new System.EventHandler(this.btn_envido_Click);
+            // 
             // Form_truco
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(580, 312);
+            this.Controls.Add(this.btn_envido);
             this.Controls.Add(this.btn_subir);
             this.Controls.Add(this.btn_no_quiero);
             this.Controls.Add(this.btn_quiero);
@@ -97,5 +110,6 @@
         private System.Windows.Forms.Button btn_quiero;
         private System.Windows.Forms.Button btn_no_quiero;
         private System.Windows.Forms.Button btn_subir;
+        private System.Windows.Forms.Button btn_envido;
     }
 }
