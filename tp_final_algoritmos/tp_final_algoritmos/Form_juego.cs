@@ -308,6 +308,12 @@ namespace tp_final_algoritmos
                             }
 
                             c = p.str_a_carta(s);
+                            if (c == null)
+                            {
+                                s = null;
+                                input = false;
+                                break;
+                            }
                             btn_truco.Enabled = false;
                             input = false;
                         }
@@ -387,6 +393,7 @@ namespace tp_final_algoritmos
                         lbl_nosotros.Text = $"Nosotros: {p.nosotros}";
                         lbl_ellos.Text = $"Ellos: {p.ellos}";
                         if (s == "mazo") { break; }
+                        if (c == null) { break; }
                         s = null;
                         c.id_jugador = id_turno;
                         cargar_cartas_mesa(c, p, id_turno);

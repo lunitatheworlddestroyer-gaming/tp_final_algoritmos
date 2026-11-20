@@ -140,6 +140,7 @@
             this.Controls.Add(this.lbl_modo);
             this.Name = "Form_envido";
             this.Text = "Envido";
+            this.Load += new System.EventHandler(this.Form_envido_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

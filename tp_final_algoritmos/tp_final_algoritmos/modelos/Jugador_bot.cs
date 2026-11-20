@@ -288,45 +288,40 @@ namespace tp_final_algoritmos.modelos
         }
         public override Carta decidir_carta(Partida p)
         {
-            Random r = new Random();
-            int a = r.Next(0, 3);
-            if(p.vuelta == 1)
+            if (this.mano.Count == 0)
             {
-                
+                return null;
+            }
+
+            Random r = new Random();
+            int a = r.Next(0, this.mano.Count);
+            if (p.vuelta == 1)
+            {
                 return this.bajar_carta(this.mano[a]);
             }
-            else
+
+            if (p.vuelta == 2)
             {
-                if (p.vuelta == 2)
+                if (p.ganador_primera == true)
                 {
-                    if (p.ganador_primera == true)
-                    {
-                        if (a == 1)
-                        {
-                            return this.bajar_carta(this.mano[0]);
-                        }
-                        else
-                        {
-                            return this.bajar_carta(this.mano[1]);
-                        }
-                    }
-                    else
-                    {
-                        if (this.mano[0].valor_truco >= this.mano[1].valor_truco)
-                        {
-                            return this.bajar_carta(this.mano[0]);
-                        }
-                        else
-                        {
-                            return this.bajar_carta(this.mano[1]);
-                        }
-                    }
+                    int indice = a == 1 ? 0 : Math.Min(1, this.mano.Count - 1);
+                    return this.bajar_carta(this.mano[indice]);
                 }
-                else
+
+                if (this.mano.Count == 1)
                 {
                     return this.bajar_carta(this.mano[0]);
                 }
+
+                if (this.mano[0].valor_truco >= this.mano[1].valor_truco)
+                {
+                    return this.bajar_carta(this.mano[0]);
+                }
+
+                return this.bajar_carta(this.mano[1]);
             }
+
+            return this.bajar_carta(this.mano[0]);
         }
     }
 }
