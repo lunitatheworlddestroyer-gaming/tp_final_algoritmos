@@ -139,11 +139,42 @@ BEGIN
         SELECT 'Se pudo registrar correctamente, ahora vuelva a introducir su usuario y contraseña para empezar a jugar' AS mensaje;
     END IF;
 END$$
+delimiter ;
+
+delimiter //
 
 create trigger after_insert_usuarios
 after insert on usuarios
 for each row
 begin
-	insert into log_usuarios(id_usuario, accion, hora)
-    values(new.id, 'se registro el usuario', now());
-end;
+	insert into log_usuarios (id_usuario, accion, hora)
+    values (new.id, 'se registro el usuario', now());
+end//
+
+delimiter ;
+
+delimiter //
+
+create trigger after_update_usuarios
+after update on usuarios
+for each row
+begin
+	if new.partidas_jugadas <> old.partidas_jugadas then
+		insert into log_usuarios(id_usuario, accion, hora)
+		values(new.id, 'el usuario inicio una partida', now());
+    elseif new.partidas_ganadas <> old.partidas_ganadas then
+		insert into log_usuarios(id_usuario, accion, hora)
+		values(new.id, 'el usuario gano una partida', now());
+	elseif new.partidas_perdidos <> old.partidas_perdidos then
+		insert into log_usuarios(id_usuario, accion, hora)
+		values(new.id, 'el usuario perdio una partida', now());
+	elseif new.torneos_jugados <> old.torneos_jugados then
+		insert into log_usuarios(id_usuario, accion, hora)
+		values(new.id, 'el usuario inicio un torneo', now());
+	elseif new.torneos_ganados <> old.torneos_ganados then
+		insert into log_usuarios(id_usuario, accion, hora)
+		values(new.id, 'el usuario gano un torneo', now());
+	end if;
+end//
+
+delimiter ;
