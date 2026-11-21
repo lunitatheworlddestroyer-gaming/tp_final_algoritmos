@@ -29,6 +29,14 @@ CREATE TABLE cartas (
 	foreign key (palo) references palos(id)
 ) engine=InnoDB;
 
+create table log_usuarios(
+	id int auto_increment primary key,
+    id_usuario int,
+    accion varchar(50),
+    hora datetime,
+    foreign key (id_usuario) references usuarios(id)
+)engine=InnoDB;
+
 insert into palos(nombre) values
 ('espada'),
 ('oro'),
@@ -79,8 +87,6 @@ insert into cartas (palo, numero, valor_truco, valor_envido) values
 
 insert into usuarios (nombre, pass) values
 ('test', '1234');
-
--- PROCEDIMIENTO ALMACENADO
 
 -- VISTAS
 -- muestra la lista de jugadores ordenada por su rendimiento.
@@ -134,7 +140,10 @@ BEGIN
     END IF;
 END$$
 
-DELIMITER ;
-SELECT nombre, pass
-                    FROM usuarios
-                    WHERE nombre = 'test' AND pass = '1234'
+create trigger after_insert_usuarios
+after insert on usuarios
+for each row
+begin
+	insert into log_usuarios(id_usuario, accion, hora)
+    values(new.id, 'se registro el usuario', now());
+end;
