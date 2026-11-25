@@ -1,0 +1,20 @@
+primero va la pantalla de inicio de sesion, el usuario se registra con un usuario y contraseña si no tiene y
+después reingresa su usuario y contraseña para iniciar sesión
+se puede jugar sin iniciar sesion tambien apretando jugar sin registrarse
+
+despues sale la ventana de elegir el modo de juego
+en modo de juego se puede elegir entre partida simple y torneo
+en cantidad de jugadores se puede elegir entre 1 vs 1, 2 vs 2 y 3 vs 3
+aunque sea en "equipo" el juego es de un sólo jugador y los otros miembros del equipo s y enemigos son bots
+el modo con flor no esta disponible todavía pero se va a añadir proximamente(?
+se puede elegir si se va a jugar hasta 15 o hasta 30 puntos
+
+ventana del juego:
+los botones de envido y truco abren ventanas donde se cantan
+las ventanas de truco y de envido van cambiando dependiendo de qué y quién lo cantó, 
+los botones se van desactivando de la ventana de envido dependiendo qué se cantó o a qué se responde
+la ventana de truco cambia el texto si te cantaron retruco a "te cantaron retruco" y el botón de retruco a quiero vale 4
+con quiero vale 4 pasa lo mismo, solo que el botón de retruco se desactiva
+está el botón de irse al mazo que es bastante obvio
+
+el bot es responsivo y a veces miente
