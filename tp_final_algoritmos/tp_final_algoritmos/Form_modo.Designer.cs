@@ -65,6 +65,7 @@
             this.cbo_cant_partidas.Size = new System.Drawing.Size(294, 24);
             this.cbo_cant_partidas.TabIndex = 1;
             this.cbo_cant_partidas.Text = "Modo de juego";
+            this.cbo_cant_partidas.SelectedIndexChanged += new System.EventHandler(this.cbo_cant_partidas_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -125,6 +126,7 @@
             this.cbo_cant_j.Size = new System.Drawing.Size(294, 24);
             this.cbo_cant_j.TabIndex = 6;
             this.cbo_cant_j.Text = "Cantidad de jugadores";
+            this.cbo_cant_j.SelectedIndexChanged += new System.EventHandler(this.cbo_cant_j_SelectedIndexChanged);
             // 
             // err_modo
             // 

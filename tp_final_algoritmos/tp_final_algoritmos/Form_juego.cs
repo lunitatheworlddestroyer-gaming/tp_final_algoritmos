@@ -262,6 +262,14 @@ namespace tp_final_algoritmos
                                 p.ganador_segunda = true;
                                 break;
                             }
+                            if(r == "si")
+                            {
+                                MessageBox.Show(
+                                    "El oponente dijo quiero",
+                                    "Mensaje",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Information);
+                            }
                             if (r == "+1")
                             {
                                 using (Form_truco form_truco = new Form_truco(partida))
@@ -288,6 +296,14 @@ namespace tp_final_algoritmos
                                             p.ganador_primera = true;
                                             p.ganador_segunda = true;
                                             break;
+                                        }
+                                        if(r == "si")
+                                        {
+                                            MessageBox.Show(
+                                                "El oponente dijo que sí",
+                                                "Mensaje",
+                                                MessageBoxButtons.OK,
+                                                MessageBoxIcon.Information);
                                         }
                                     }
                                 }
@@ -337,6 +353,7 @@ namespace tp_final_algoritmos
                                     : "no";
                                 if(r == "si")
                                 {
+                                    
                                     p.truco = Enums.Truco.truco;
                                     using (Form_truco form_truco = new Form_truco(partida))
                                     {
@@ -365,19 +382,30 @@ namespace tp_final_algoritmos
                                             }
                                             else
                                             {
-                                                using (Form_truco form_truco2 = new Form_truco(partida))
+                                                if (r == "si")
                                                 {
-                                                    DialogResult resultado2 = form_truco2.ShowDialog();
-                                                    if (resultado == DialogResult.Cancel)
+                                                    MessageBox.Show(
+                                                        "El oponente dijo que sí",
+                                                        "Mensaje",
+                                                        MessageBoxButtons.OK,
+                                                        MessageBoxIcon.Information);
+                                                }
+                                                else
+                                                {
+                                                    using (Form_truco form_truco2 = new Form_truco(partida))
                                                     {
-                                                        //no quiso
-                                                        p.quiso_truco = false;
-                                                        p.ellos = p.ellos + p.puntos_truco();
-                                                        p.ganador_primera = true;
-                                                        p.ganador_segunda = true;
-                                                        break;
-                                                    }
+                                                        DialogResult resultado2 = form_truco2.ShowDialog();
+                                                        if (resultado == DialogResult.Cancel)
+                                                        {
+                                                            //no quiso
+                                                            p.quiso_truco = false;
+                                                            p.ellos = p.ellos + p.puntos_truco();
+                                                            p.ganador_primera = true;
+                                                            p.ganador_segunda = true;
+                                                            break;
+                                                        }
 
+                                                    }
                                                 }
                                             }
 
@@ -422,9 +450,25 @@ namespace tp_final_algoritmos
                     p.cartas_en_mesa.Clear();
                     p.vuelta++;
                 }
+                if (p.ganador_ronda() == true)
+                {
+                    MessageBox.Show(
+                        "Ganaste esta mano, repartiendo la siguiente...",
+                        "Mensaje",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show(
+                        "El oponente gano esta mano, repartiendo la siguiente...",
+                        "Mensaje",
+                        MessageBoxButtons.OK,
+                        MessageBoxIcon.Information);
+                }
                 preguntar_e = false;
                 p.id_mano = (p.id_mano + 1) % p.jugadores.Count();
-                if (p.quiso_truco != false)
+                if (p.quiso_truco != null)
                 {
                     if (p.ganador_ronda() == true)
                     {
@@ -432,15 +476,36 @@ namespace tp_final_algoritmos
                     }
                     else
                     {
-                        if (p.ganador_ronda() != null)
+                        if (p.ganador_ronda() == false)
                         {
                             p.ellos = p.ellos + p.puntos_truco();
                         }
                     }
                 }
+                else
+                {
+                    if (p.jugadores[p.id_mano].equipo)
+                    {
+                        p.nosotros++;
+                    }
+                    else
+                    {
+                        p.ellos++;
+                    }
+                }
                 p.cartas_en_mesa.Clear();
                 if (p.nosotros >= p.puntos || p.ellos >= p.puntos) { break; }
             }
+            if(p.nosotros > p.puntos)
+            {
+                MessageBox.Show("Felicidades, ganaste", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                MessageBox.Show("Perdiste, mas suerte la próxima", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            DialogResult = DialogResult.OK;
+            this.Close();
         }
         public Form_juego(modelos.Partida Partida)
         {

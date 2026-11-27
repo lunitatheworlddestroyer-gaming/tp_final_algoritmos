@@ -74,11 +74,43 @@ namespace tp_final_algoritmos
                     if (cbo_cant_partidas.SelectedIndex == 0) {modo = Enums.Modo_partida.simple; }
                     else { modo = Enums.Modo_partida.torneo; }
                     modelos.Partida partida = new modelos.Partida(c, p, modo, player);
-                    Form_juego form_juego = new Form_juego(partida);
-                    form_juego.Show();
-                    this.Hide();
+                    using (Form_juego form_juego = new Form_juego(partida))
+                    {
+                        this.Hide();
+                        DialogResult r = form_juego.ShowDialog();
+                        if (r == DialogResult.OK) 
+                        {
+                            this.Show();
+                        }
+                    }
                 
                 }
+            }
+        }
+
+        private void cbo_cant_partidas_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbo_cant_partidas.SelectedIndex == 1)
+            {
+                err_modo.SetError(cbo_cant_partidas, "Modo no disponible en este momento");
+                btn_jugar.Enabled = false;
+            }
+            else
+            {
+                btn_jugar.Enabled=true;
+            }
+        }
+
+        private void cbo_cant_j_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(cbo_cant_j.SelectedIndex == 1 || cbo_cant_j.SelectedIndex == 2)
+            {
+                err_modo.SetError(cbo_cant_j, "Modo no disponible en este momento");
+                btn_jugar.Enabled = false;
+            }
+            else
+            {
+                btn_jugar.Enabled=true;
             }
         }
     }
